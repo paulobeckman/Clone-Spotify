@@ -16,12 +16,56 @@ body {
     font-family: 'Hind', sans-serif;
 }
 
+body .pageGrid{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
 body .bottomBar{
     width: 100%;
     height: 90px;
     background: var(--secondary-color);
 }
 
+body .rightBar .navegation span  {
+    background: black;
+    color: white;
+    padding: 6px;
+    border-radius: 50%;
+    margin-top: 14px;
+}
+
+body .rightBar header{
+    display: flex;
+    justify-content: space-between;
+}
+
+body .rightBar .navegation span:first-child {
+    margin-left: 32px;
+    margin-right: 14px;
+}
+
+body .rightBar .menuName  {
+    background: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 23px;
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+    margin-right: 26px;
+}
+
+.rightBar .menuName img {
+    height: 26px;
+    height: 26px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+/* LEFT BAR */
 body .leftBar {
     margin-left: 22px
 }
@@ -37,7 +81,8 @@ body .leftBar {
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 18px;
-
+    display: flex;
+    align-items: center;
 }
 
 .leftBar .itemLeftBar ul li:last-child{
@@ -69,6 +114,11 @@ body .leftBar {
     margin-right: 10px;
 }
 
+.itemLeftBar ul li span.iconFake{
+    margin-left: 3px;
+    margin-right: 15px;
+}
+
 .itemLeftBar ul li i#box {
     color: white;
     background-image: linear-gradient(to bottom right, #6117FD, #FFFFFF);
@@ -77,9 +127,43 @@ body .leftBar {
     font-size: 14px;
 }
 
-.itemLeftBar ul li span.iconFake{
-    margin-left: 3px;
-    margin-right: 15px;
+.sectionMenuPlaylist {
+    margin-bottom: 17px;
+    border-bottom: 1px solid var(--text-secundary-color);
+    margin-right: 12px;
+
 }
+
+.itemLeftBar.sectionPlaylists ul{
+    margin-bottom: 15px;
+}
+
+.itemLeftBar.sectionPlaylists ul li{
+    margin-bottom: 5px;
+}
+
+.installApp {
+    color: var(--text-secundary-color);
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.installApp span {
+    margin-right: 8px;
+}
+
+
+/* HOME MAIN*/
+body .rightBar{
+    width: 100%;
+    height: 100%;
+    background: #0D0D0E;
+}
+
+
+
 
 

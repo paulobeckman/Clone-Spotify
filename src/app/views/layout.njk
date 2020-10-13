@@ -10,15 +10,27 @@
 
     </head>
     <body>
-        <section class="leftBar">
+        <div class="pageGrid">
+            <section class="leftBar">
             {% include './leftBar.njk'%}
         </section>
-        <section class="main">
-            {%block main%}{%endblock%}
+        <section class="rightBar">
+            <header>
+                <span class="navegation">
+                    <span class="material-icons">navigate_before</span>
+                    <span class="material-icons">navigate_next</span>
+                </span>
+                <span class="menuName">
+                    <img src="https://avatars0.githubusercontent.com/u/62726044?s=460&u=c2c75a1b6b34d0b6d0d60cac2b0af60f102bd859&v=4" alt=""> 
+                    <span>Paulo Beckman</span>
+                    <span class="material-icons">arrow_drop_down</span>
+                </span>
+            </header>
+            
+            {%block content %}{%endblock%}
         </section>
-
-        <div class="bottomBar">
-
         </div>
+        
+        <div class="bottomBar"></div>
     </body>
 </html>
