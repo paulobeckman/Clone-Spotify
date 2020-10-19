@@ -5,7 +5,7 @@
     --text-secundary-color: #B3B3B3;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     border: 0;
@@ -25,6 +25,9 @@ body .bottomBar{
     width: 100%;
     height: 90px;
     background: var(--secondary-color);
+    bottom: 0;
+    position: fixed;
+
 }
 
 body .rightBar .navegation span  {
@@ -163,7 +166,102 @@ body .rightBar{
     background: #0D0D0E;
 }
 
+.titleCards{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
 
+.titleCards span {
+    color: var(--text-secundary-color);
+    font-weight: 600;
+}
 
+.titleCards span:first-child {
+    font-size: 24px;
+    margin-left: 32px;
+}
+
+.titleCards span:last-child {
+    font-size: 12px;
+    margin-right: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.main .cards {
+    display: grid;
+    grid-template-columns: repeat(5, 158px);
+    margin-left: 32px;
+    margin-top: 13px;
+    grid-gap: 16px;
+}
+
+.main .cards .card{
+    background: var(--secondary-color);
+    border-radius: 20px;
+    color: #FFFFFF;
+    padding: 0 12px;
+}
+
+.main .cards .card img {
+    width: 133px;
+    padding-top: 13px;
+}
+
+.main .cards .card h1{
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom: 3px;
+}
+
+.main .cards .card p{
+    font-weight: 400;
+    font-size: 11px;
+    padding-bottom: 11px;
+}
+
+/* BOTTOM BAR */
+
+body .bottomBar .inforAlbuns {
+    display: flex;  
+}
+
+body .bottomBar .inforAlbuns img {
+    height: 60px;
+    padding: 15px 14px;
+} 
+
+.bottomBar .inforAlbum ul{
+    list-style: none;
+    padding: 23px 0;
+}
+
+.bottomBar .inforAlbum ul li.nameMusic{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.bottomBar .inforAlbum ul li.nameArtist {
+    color: var(--text-secundary-color);
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.bottomBar .icons{
+    color: white;
+    padding: 38.50px 17px;
+    display: flex;
+    align-items: center;
+}
+
+.bottomBar .icons span{
+    font-size: 15px
+}
+
+.bottomBar .icons span + span{
+    margin-left: 17px;
+}
 
 
