@@ -16,6 +16,10 @@ body {
     font-family: 'Hind', sans-serif;
 }
 
+body .rightBar .marginBottom {
+    margin-bottom: 120px;
+}
+
 body .pageGrid{
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -199,7 +203,7 @@ body .rightBar{
 
 .main .cards .card{
     background: var(--secondary-color);
-    border-radius: 20px;
+    border-radius: 3px;
     color: #FFFFFF;
     padding: 0 12px;
 }
@@ -222,9 +226,13 @@ body .rightBar{
 }
 
 /* BOTTOM BAR */
-
-body .bottomBar .inforAlbuns {
+body .bottomBar .inforAlbuns,
+body .bottomBar {
     display: flex;  
+}
+
+body .bottomBar{
+    justify-content: space-between;
 }
 
 body .bottomBar .inforAlbuns img {
@@ -257,11 +265,85 @@ body .bottomBar .inforAlbuns img {
 }
 
 .bottomBar .icons span{
-    font-size: 15px
+    font-size: 14px;
+    color: var(--text-secundary-color)
 }
 
 .bottomBar .icons span + span{
     margin-left: 17px;
 }
+
+.controlMusic .controlers {
+    color: var(--text-secundary-color);
+    padding-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controlMusic .controlers span {
+    font-size: 25px;
+}
+
+.controlMusic .controlers span:last-child{
+    font-size: 20px;
+}
+
+.controlMusic .controlers i {
+    font-size: 15px;
+    margin-top: 1px;
+}
+
+.controlMusic .controlers span + span, 
+.controlMusic .controlers i + span  {
+    margin-left: 15px;
+}
+
+.controlMusic .progressMusicBar  {
+    display: flex;
+    align-items: center;
+    color: var(--text-secundary-color);
+}
+
+.controlMusic .progressMusicBar .tempMusicBar{
+    width: 350px;
+    height: 4px;
+    background: var(--text-secundary-color);
+    margin: 0 6px;
+    border-radius: 20px;
+}
+
+.controlMusic .progressMusicBar div {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.bottomBar .controllDevicesVolume {
+    color: var(--text-secundary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottomBar .controllDevicesVolume span {
+    font-size: 20px;
+}
+
+.bottomBar .controllDevicesVolume span:first-child {
+    font-size: 25px;
+}
+
+.bottomBar .controllDevicesVolume span + span{
+    margin-left: 10px;
+}
+
+.bottomBar .controllDevicesVolume .volumeBar{
+    width: 90px;
+    height: 4px;
+    background: var(--text-secundary-color);
+    margin: 0 6px;
+    border-radius: 20px;
+}
+
 
 
