@@ -3,12 +3,18 @@
 :root {
     --secondary-color: #242526;
     --text-secundary-color: #B3B3B3;
+    --color-botton-play: #1DB954;
+    --color-active-menu: #282828;
 }
 
 * {
     padding: 0;
     margin: 0;
     border: 0;
+}
+a {
+    text-decoration: none;
+    color: var(--text-secundary-color);
 }
 
 body {
@@ -74,7 +80,8 @@ body .rightBar .menuName  {
 
 /* LEFT BAR */
 body .leftBar {
-    margin-left: 22px
+    margin-left: 22px;
+    overflow-x: scroll;
 }
 
 .leftBar .logoSpotify img{
@@ -83,7 +90,20 @@ body .leftBar {
     margin: 22px 0;
 }
 
-.leftBar .itemLeftBar ul li {
+.leftBar .itemLeftBar ul li a{
+    display: flex;
+    align-items: center;
+}
+
+.leftBar .itemLeftBar ul li a.active{
+    color: #FFFFFF;
+    background: var(--color-active-menu);
+    padding: 7px 12px;
+    padding-right: 80px;
+    border-radius: 4px;
+}
+
+.leftBar .itemLeftBar ul li{
     color: var(--text-secundary-color);
     font-weight: 600;
     font-size: 14px;
@@ -202,24 +222,57 @@ body .rightBar{
 }
 
 .main .cards .card{
+    background: #181818;
+    border-radius: 3px;
+    color: #FFFFFF;
+    padding: 0 12px;
+    transition: 0.4s;
+}
+
+.main .cards .card:hover{
     background: var(--secondary-color);
     border-radius: 3px;
     color: #FFFFFF;
     padding: 0 12px;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
-.main .cards .card img {
+.card .contentCardImg {
+    position: relative;
+}
+
+.card .contentCardImg span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px 8px;
+    padding: 5px;
+    background: var(--color-botton-play);
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.main .cards .card:hover span {
+    opacity: 1;
+    transition: 0.2s;
+    margin: 15px 8px;
+}
+
+.cards .card img { 
     width: 133px;
     padding-top: 13px;
 }
 
-.main .cards .card h1{
+.cards .card h1{
     font-weight: bold;
     font-size: 14px;
     padding-bottom: 3px;
 }
 
-.main .cards .card p{
+.cards .card p{
     font-weight: 400;
     font-size: 11px;
     padding-bottom: 11px;
@@ -245,7 +298,7 @@ body .bottomBar .inforAlbuns img {
     padding: 23px 0;
 }
 
-.bottomBar .inforAlbum ul li.nameMusic{
+.bottomBar .inforAlbum ul li.nameMusic {
     color: #FFFFFF;
     font-weight: 400;
     font-size: 14px;
