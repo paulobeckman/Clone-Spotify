@@ -93,14 +93,16 @@ body .leftBar {
 .leftBar .itemLeftBar ul li a{
     display: flex;
     align-items: center;
+    margin-left: 13px;
 }
 
 .leftBar .itemLeftBar ul li a.active{
     color: #FFFFFF;
     background: var(--color-active-menu);
     padding: 7px 12px;
-    padding-right: 80px;
     border-radius: 4px;
+    margin-left: 0;
+    width: 80%
 }
 
 .leftBar .itemLeftBar ul li{
