@@ -5,6 +5,7 @@
     --text-secundary-color: #B3B3B3;
     --color-botton-play: #1DB954;
     --color-active-menu: #282828;
+    --color-white: #FFFFFF;
 }
 
 * {
@@ -12,9 +13,21 @@
     margin: 0;
     border: 0;
 }
+
 a {
     text-decoration: none;
     color: var(--text-secundary-color);
+    cursor: pointer;
+}
+
+input {
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+ul li {
+    cursor: pointer;
 }
 
 body {
@@ -94,15 +107,16 @@ body .leftBar {
     display: flex;
     align-items: center;
     margin-left: 13px;
+
 }
 
 .leftBar .itemLeftBar ul li a.active{
-    color: #FFFFFF;
+    color: var(--color-white);
     background: var(--color-active-menu);
     padding: 7px 12px;
     border-radius: 4px;
     margin-left: 0;
-    width: 80%
+    width: 80%;
 }
 
 .leftBar .itemLeftBar ul li{
@@ -150,7 +164,7 @@ body .leftBar {
 
 .itemLeftBar ul li i#box {
     color: white;
-    background-image: linear-gradient(to bottom right, #6117FD, #FFFFFF);
+    background-image: linear-gradient(to bottom right, #6117FD,var(--color-white));
     padding: 6px;
     align-items: center;
     font-size: 14px;
@@ -160,15 +174,15 @@ body .leftBar {
     margin-bottom: 17px;
     border-bottom: 1px solid var(--text-secundary-color);
     margin-right: 12px;
-
+    margin-left: 0;
 }
 
-.itemLeftBar.sectionPlaylists ul{
+.itemLeftBar.sectionMenuPlaylist ul{
     margin-bottom: 15px;
 }
 
-.itemLeftBar.sectionPlaylists ul li{
-    margin-bottom: 5px;
+.itemLeftBar.sectionMenuPlaylist ul li a{
+    margin-left: 0;
 }
 
 .installApp {
@@ -226,7 +240,7 @@ body .rightBar{
 .main .cards .card{
     background: #181818;
     border-radius: 3px;
-    color: #FFFFFF;
+    color: var(--color-white);
     padding: 0 12px;
     transition: 0.4s;
 }
@@ -234,7 +248,7 @@ body .rightBar{
 .main .cards .card:hover{
     background: var(--secondary-color);
     border-radius: 3px;
-    color: #FFFFFF;
+    color: var(--color-white);
     padding: 0 12px;
     cursor: pointer;
     transition: 0.4s;
@@ -301,7 +315,7 @@ body .bottomBar .inforAlbuns img {
 }
 
 .bottomBar .inforAlbum ul li.nameMusic {
-    color: #FFFFFF;
+    color: var(--color-white);
     font-weight: 400;
     font-size: 14px;
 }
@@ -313,7 +327,7 @@ body .bottomBar .inforAlbuns img {
 }
 
 .bottomBar .icons{
-    color: white;
+    color: var(--color-white);
     padding: 38.50px 17px;
     display: flex;
     align-items: center;
@@ -400,5 +414,66 @@ body .bottomBar .inforAlbuns img {
     border-radius: 20px;
 }
 
+/* modal-overlay*/
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
 
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
 
+.modal-overlay{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay .close-modal{
+    display: flex;
+    justify-content: center;
+}
+
+.modal-overlay .close-modal span {
+    font-size: 53px;
+    color: var(--color-white);
+}
+
+.modal-overlay h1 {
+    font-size: 48px;
+    color: var(--color-white);
+    font-weight: 700;
+    
+}
+
+.modal-overlay form .input {
+    background: var(--color-active-menu);
+    padding: 32px;
+}
+
+form .input div {
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+form input{
+    width: 100%;
+    height: 58px;
+    background: var(--color-active-menu);
+    margin-top: 26px;
+}
+
+form input::placeholder{
+    font-size: 48px;
+    color: #5B5B5B;
+    font-weight: 700;
+    align-items: center;
+}
