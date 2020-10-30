@@ -438,24 +438,36 @@ body .bottomBar .inforAlbuns img {
 
 .modal-overlay .close-modal{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    margin: 0 auto;
 }
 
 .modal-overlay .close-modal span {
     font-size: 53px;
     color: var(--color-white);
+    margin: 0 auto;
+}
+
+.modal-overlay .close-modal span:hover {
+    font-size: 56px;
+    
 }
 
 .modal-overlay h1 {
     font-size: 48px;
     color: var(--color-white);
     font-weight: 700;
-    
+    display: flex;
+    justify-content: center;
+     
 }
 
 .modal-overlay form .input {
     background: var(--color-active-menu);
     padding: 32px;
+    width: 95vw;
 }
 
 form .input div {
@@ -469,6 +481,10 @@ form input{
     height: 58px;
     background: var(--color-active-menu);
     margin-top: 26px;
+    caret-color: var(--color-botton-play); 
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-white);
 }
 
 form input::placeholder{
@@ -477,3 +493,60 @@ form input::placeholder{
     font-weight: 700;
     align-items: center;
 }
+
+.modal-overlay .buttons{
+    margin-top: 28px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 140px 140px;  
+    gap: 24px;
+    align-items: center;
+}
+
+.modal-overlay .buttons .cancelar {
+    display: flex;
+    justify-content: center;
+    height: 42px;
+    
+    align-items: center;
+}
+
+.modal-overlay .buttons .buttonCancelar{
+    padding: 8px 34px;
+    border-radius: 30px;    
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid  #535353;
+    transition: all .5s;
+    cursor: pointer
+}
+
+.modal-overlay .buttons .buttonCancelar:hover{
+    transform: scale(1.1)
+}
+
+.modal-overlay .buttons .save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 42px;
+
+}
+
+.modal-overlay .buttons button {
+    background: var(--color-botton-play);
+    padding: 12px 47px;
+    border-radius: 30px;
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .5s;
+} 
+
+.modal-overlay .buttons button:hover{
+    transform: scale(1.1)
+}
+
