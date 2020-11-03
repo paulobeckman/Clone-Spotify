@@ -21,12 +21,10 @@
 
 <div class="itemLeftBar sectionPlaylists">
     <ul>
-        <li>Descobertas da semana</li>
-        <li>A Máquina do Tempo</li>
-        <li>Descobertas da semana</li>
-        <li>A Máquina do Tempo</li>
-        <li>Descobertas da semana</li>
-        <li>A Máquina do Tempo</li>
+        {%for playlist in playlists%}
+            <li>{{playlist.name}}</li>
+        {%endfor%}
+
     </ul>
 </div>
 

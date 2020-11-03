@@ -185,11 +185,15 @@ body .leftBar {
     margin-left: 0;
 }
 
+.itemLeftBar.sectionPlaylists ul li {
+    margin-bottom: 10px;
+}
+
 .installApp {
     color: var(--text-secundary-color);
     font-weight: 700;
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     display: flex;
     align-items: center;
 }
@@ -205,6 +209,9 @@ body .rightBar{
     height: 100%;
     background: #0D0D0E;
 }
+.main {
+    margin-left: 36px;
+}
 
 .titleCards{
     display: flex;
@@ -219,7 +226,6 @@ body .rightBar{
 
 .titleCards span:first-child {
     font-size: 24px;
-    margin-left: 32px;
 }
 
 .titleCards span:last-child {
@@ -232,7 +238,6 @@ body .rightBar{
 .main .cards {
     display: grid;
     grid-template-columns: repeat(5, 158px);
-    margin-left: 32px;
     margin-top: 13px;
     grid-gap: 16px;
 }
@@ -520,7 +525,7 @@ form input::placeholder{
     border: 1px solid  #535353;
     transition: all .5s;
     cursor: pointer
-}
+} 
 
 .modal-overlay .buttons .buttonCancelar:hover{
     transform: scale(1.1)
@@ -548,5 +553,47 @@ form input::placeholder{
 
 .modal-overlay .buttons button:hover{
     transform: scale(1.1)
+}
+
+
+/* PLAYLIST */
+.main .contentInfor{
+    display: grid;
+    grid-template-columns: 195px 1fr;
+    grid-gap: 27px;
+}
+
+.contentInfor section img{
+    width: 192px;
+    height: 192px;
+}
+
+.main .contentInfor section:nth-child(2){
+    color: var(--color-white);
+    position: relative;
+} 
+
+.main .contentInfor section .infor{
+    position: absolute;
+    bottom: 0;
+}
+
+
+.contentInfor section .infor div {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.contentInfor section .infor h1 {
+    font-size: 48px;
+    font-weight: bold;
+    height: 61px;
+}
+
+.contentInfor section .infor p {
+    font-size: 14px;
+    font-weight: 500;  
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, .8)
 }
 
