@@ -13,10 +13,52 @@
                     <div>PLAYLIST</div>
                     <h1>{{playlist.name}}</h1>
                     <p>Sua mixtape semanal cheia de novas descobertas</p>
-                    <div>Spotify</div>
+                    <div class="detailsPlaylist">
+                        <span>Spotify</span>
+                        <span>•</span>
+                        <span class="styleTransparent">578.328 curtidas</span>
+                        <span>•</span>
+                        <span class="styleTransparent">61 músicas, 3h 57min</span>
+                     </div>
                 </div>
-            </section>
+            </section>    
         </div>
+
+        <div class="buttons">
+            <span class="material-icons" id="play">play_arrow</span>
+            <span id="liked"><i class="fa fa-heart" id="box"></i></span>
+            <span class="material-icons" id="more">more_horiz</span>
+        </div>
+
+        <table width="100%">
+            <thead>
+                <tr>-
+                    <th>#</th>
+                    <th>TÍTULO</th>
+                    <th>ÁLBUM</th>
+                    <th>ADICIONADO EM</th>
+                    <th><span class="material-icons">query_builder</span></th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <th>
+                        <div class="titulo">
+                            <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
+                            <div>
+                                <div class="title">Lights</div>
+                                <div class="name">VINNE, Caelu</div>
+                            </div>
+                        </div>
+                    </th>
+                    <th>Lights</th>
+                    <th>há 4 dias</th>
+                    <th>3:20</th>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 {% endblock%}

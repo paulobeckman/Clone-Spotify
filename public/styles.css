@@ -6,6 +6,7 @@
     --color-botton-play: #1DB954;
     --color-active-menu: #282828;
     --color-white: #FFFFFF;
+    --color-gray-transparent: rgba(255, 255, 255, .8);
 }
 
 * {
@@ -578,7 +579,6 @@ form input::placeholder{
     bottom: 0;
 }
 
-
 .contentInfor section .infor div {
     font-size: 12px;
     font-weight: bold;
@@ -594,6 +594,72 @@ form input::placeholder{
     font-size: 14px;
     font-weight: 500;  
     margin-bottom: 8px;
-    color: rgba(255, 255, 255, .8)
+    color: var(--color-gray-transparent)
 }
 
+.infor .detailsPlaylist span.styleTransparent{
+    color: var(--color-gray-transparent);
+    font-weight: 400
+}
+
+.main .buttons{
+    display: flex;
+    align-items: center;
+    margin-top: 43px;
+}
+
+.main .buttons span+span {
+    margin-left: 32px;
+}
+
+.main .buttons #play {
+    color: var(--color-white);
+    padding: 13px;
+    font-size: 35px;
+    background: var(--color-botton-play);
+    border-radius: 50%;
+}
+
+.main .buttons #liked {
+    color: var(--color-botton-play);
+    font-size: 30px;
+}
+
+.main .buttons #more {
+    color : var(--color-gray-transparent);
+    font-size: 35px;
+}
+
+table {
+    text-align: left;
+    border-spacing: 0;
+    margin-top: 24px;
+}
+
+.main table thead tr th {
+    color: var(--color-gray-transparent);
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+
+}
+
+.main table thead tr th span {
+    font-size: 14px;
+}
+
+.main table tbody tr th img{
+    width: 40px;
+}
+
+.main table tbody tr th {
+    color: var(--color-gray-transparent);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.main table tbody tr th .titulo{
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    grid-gap: 16px;
+}

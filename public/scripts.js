@@ -12,7 +12,6 @@ const criar = document.querySelector(".itemLeftBar.sectionMenuPlaylist ul li")
 const close = document.querySelector(".close-modal")
 const cancelar = document.querySelector(".modal-overlay .buttons .buttonCancelar")
 
-
 criar.addEventListener("click", function(){
     modalOverlay.classList.add('active')
 })
@@ -24,4 +23,17 @@ close.addEventListener("click", function(){
 cancelar.addEventListener("click", function(){
     modalOverlay.classList.remove('active')
 })
+
+
+const cards = document.querySelectorAll(".card")
+
+for (let card of cards){
+    card.addEventListener("click", function(){
+        const ID = card.getAttribute("id")
+        location.href=`/playlist/${ID}`
+    })
+}
+
+
+
 
