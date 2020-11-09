@@ -3,7 +3,7 @@ const Playlists = require('../models/Playlists')
 module.exports = {
     index(req,res){
         Playlists.all(function(playlists){
-            return res.render("home", {playlists})
+            return res.render("pages/home", {playlists})
         })
 
     },
@@ -21,6 +21,6 @@ module.exports = {
         let results = await Playlists.find(req.params.id)
         const playlist = results.rows[0]
 
-        return res.render("playlist", {playlist})
+        return res.render("pages/playlist", {playlist})
     }
 }

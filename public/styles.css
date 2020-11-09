@@ -211,7 +211,7 @@ body .rightBar{
     background: #0D0D0E;
 }
 .main {
-    margin-left: 36px;
+    margin: 0 36px;
 }
 
 .titleCards{
@@ -630,36 +630,58 @@ form input::placeholder{
     font-size: 35px;
 }
 
-table {
-    text-align: left;
-    border-spacing: 0;
-    margin-top: 24px;
+.main .head {
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr 1fr 20px;
+    margin: 24px 0 0 0;
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 
-.main table thead tr th {
+.main .head div,
+.main .head span{
     color: var(--color-gray-transparent);
     font-size: 14px;
     font-weight: 400;
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+.main .contentMusic {
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr 1fr 28px;
 
+    margin-top: 17px;
+    padding: 10px 20px;
 }
 
-.main table thead tr th span {
-    font-size: 14px;
+.main .contentMusic:hover {
+    background: var(--color-active-menu);
+    border-radius: 4px;
+    padding: 10px 20px;
 }
 
-.main table tbody tr th img{
+.main .contentMusic .number span {
+    position: absolute;
+    margin-right:10px;
+} 
+
+.contentMusic .title {
+    grid-gap: 16px;
+}
+.contentMusic .title section.name {
+    display: block;
+}
+
+.contentMusic .title section img {
     width: 40px;
 }
 
-.main table tbody tr th {
+.contentMusic div {
     color: var(--color-gray-transparent);
     font-size: 14px;
     font-weight: 400;
 }
 
-.main table tbody tr th .titulo{
-    display: grid;
-    grid-template-columns: 45px 1fr;
-    grid-gap: 16px;
+.main .contentMusic section  {
+    display: flex;
+    align-items: center;
 }
+

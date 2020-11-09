@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head%}
+         <title>Spotify</title>
+        {% endblock  %}
+        <link rel="stylesheet" href="/styles.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="pageGrid">
+            <section class="leftBar">
+                {% include '../components/leftBar.njk'%}
+            </section>
+            
+            <section class="rightBar">
+                <header>
+                    <span class="navegation">
+                        <span class="material-icons">navigate_before</span>
+                        <span class="material-icons">navigate_next</span>
+                    </span>
+                    <span class="menuName">
+                        <img src="https://avatars0.githubusercontent.com/u/62726044?s=460&u=c2c75a1b6b34d0b6d0d60cac2b0af60f102bd859&v=4" alt=""> 
+                        <span>Paulo Beckman</span>
+                        <span class="material-icons">arrow_drop_down</span>
+                    </span>
+                </header>
+                
+                {%block content %}{%endblock%}
+
+                <div class="marginBottom"></div>
+            </section>
+        </div>
+        
+        {% include '../components/playBar.njk'%}
+
+        {% include '../components/modalOverlay.njk'%}
+        
+    </body>
+
+    <script src="/scripts.js"></script>
+</html>

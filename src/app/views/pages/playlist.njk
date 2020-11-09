@@ -1,0 +1,87 @@
+{% extends '../components/layout.njk'%}
+
+{% block content %}
+
+    <div class="main">
+        <div class="contentInfor">
+            <section>
+                <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
+            </section>
+            
+            <section>
+                <div class="infor">
+                    <div>PLAYLIST</div>
+                    <h1>{{playlist.name}}</h1>
+                    <p>Sua mixtape semanal cheia de novas descobertas</p>
+                    <div class="detailsPlaylist">
+                        <span>Spotify</span>
+                        <span>•</span>
+                        <span class="styleTransparent">578.328 curtidas</span>
+                        <span>•</span>
+                        <span class="styleTransparent">61 músicas, 3h 57min</span>
+                     </div>
+                </div>
+            </section>    
+        </div>
+
+        <div class="buttons">
+            <span class="material-icons" id="play">play_arrow</span>
+            <span id="liked"><i class="fa fa-heart" id="box"></i></span>
+            <span class="material-icons" id="more">more_horiz</span>
+        </div>
+
+        <div class="head">
+            <section class="number">
+                <div>#</div>
+            </section>
+
+            <section class="title">
+                <div>TÍTULO</div>
+            </section>
+
+            <section class="album">
+                <div>ÁLBUM</div>
+            </section>
+
+            <section class="add">
+                <div>ADICIONADO EM</div>
+            </section>
+
+            <section class="time">
+                <span class="material-icons">query_builder</span>
+            </section>
+        </div>
+
+        <div class="contentMusic">
+            <section class="number">
+                <div>1</div>
+                <span class="material-icons" id="play">play_arrow</span>
+            </section>
+
+            <section class="title">
+                <section>
+                    <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
+                </section>
+                <section class="name">
+                    <div>Lights</div>
+                    <div>VINNE, Caelu</div>
+                </section>
+                
+            </section>
+
+            <section class="album">
+                <div>Lights</div>
+            </section>
+
+            <section class="add">
+                <div>há 4 dias</div>
+            </section>
+
+            <section class="time">
+                <div>3:20</div>
+            </section>
+        </div>
+
+    </div>
+
+{% endblock%}
