@@ -60,6 +60,7 @@ body .rightBar .navegation span  {
     padding: 6px;
     border-radius: 50%;
     margin-top: 14px;
+    cursor: pointer;
 }
 
 body .rightBar header{
@@ -562,14 +563,19 @@ form input::placeholder{
     display: grid;
     grid-template-columns: 195px 1fr;
     grid-gap: 27px;
+    /* max-height: 500px;
+    min-height: 340px; */
+    height: 40vh
 }
 
 .contentInfor section img{
     width: 192px;
     height: 192px;
+    position: absolute;
+    bottom: 0;
 }
 
-.main .contentInfor section:nth-child(2){
+.main .contentInfor section{
     color: var(--color-white);
     position: relative;
 } 
@@ -602,6 +608,7 @@ form input::placeholder{
     font-weight: 400
 }
 
+/* buttons */
 .main .buttons{
     display: flex;
     align-items: center;
@@ -618,23 +625,39 @@ form input::placeholder{
     font-size: 35px;
     background: var(--color-botton-play);
     border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer
+
 }
 
+.main .buttons #play:hover {
+    transition: 0.3s;
+    transform: scale(1.08)
+}
 .main .buttons #liked {
     color: var(--color-botton-play);
     font-size: 30px;
+    cursor: pointer;
 }
 
 .main .buttons #more {
     color : var(--color-gray-transparent);
     font-size: 35px;
+    cursor: pointer;
 }
 
+.main .buttons #more:hover {
+    color: var(--color-white)
+}
+
+/* head playlist*/
 .main .head {
     display: grid;
-    grid-template-columns: 20px 1fr 1fr 1fr 20px;
-    margin: 24px 0 0 0;
+    grid-template-columns: 20px 6fr 4fr 3fr minmax(110px,1fr);
+    gap: 16px;
+    margin: 24px 0 17px 0;
     padding-bottom: 7px;
+    padding: 0 16px;
     border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 
@@ -644,44 +667,114 @@ form input::placeholder{
     font-size: 14px;
     font-weight: 400;
 }
+
+.main .head section {
+    position: relative;
+    align-items: center;
+}
+
+.main .head section.number div{
+    position: relative;
+    display:flex;
+    justify-content: center;
+}
+
+.main .head section span{
+    margin-right: 37px;
+    position: absolute;
+    right: 0;
+}
+
+/* musics */
 .main .contentMusic {
     display: grid;
-    grid-template-columns: 20px 1fr 1fr 1fr 28px;
-
-    margin-top: 17px;
-    padding: 10px 20px;
+    grid-template-columns: 20px 6fr 4fr 3fr minmax(110px,1fr);
+    gap: 16px;
+    height: 56px;
+    
+    padding: 0 16px;
 }
 
 .main .contentMusic:hover {
     background: var(--color-active-menu);
     border-radius: 4px;
-    padding: 10px 20px;
-}
-
-.main .contentMusic .number span {
-    position: absolute;
-    margin-right:10px;
-} 
-
-.contentMusic .title {
-    grid-gap: 16px;
-}
-.contentMusic .title section.name {
-    display: block;
-}
-
-.contentMusic .title section img {
-    width: 40px;
-}
-
-.contentMusic div {
-    color: var(--color-gray-transparent);
-    font-size: 14px;
-    font-weight: 400;
 }
 
 .main .contentMusic section  {
     display: flex;
     align-items: center;
 }
+
+.main .contentMusic section.number {
+    position: relative;
+    justify-content: center;
+}
+
+.main .contentMusic .number span {
+    position: absolute;
+    opacity: 0;
+    color: var(--color-white)
+}
+
+.main .contentMusic:hover .number span{
+    opacity: 1;
+    transition: 0.1s;
+}
+
+.main .contentMusic:hover .number div{
+    opacity: 0;
+}
+
+.contentMusic .title {
+    grid-gap: 16px;
+}
+
+.contentMusic .title section.name,
+.contentMusic .album div {
+    display: block;
+    cursor: pointer;
+}
+
+.contentMusic .title section img {
+    width: 40px;
+}
+
+.contentMusic div,
+.contentMusic .time span,
+.contentMusic .time i {
+    color: var(--color-gray-transparent);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.contentMusic .time span{
+    opacity: 0;
+}
+
+.contentMusic:hover section div,
+.contentMusic:hover section span,
+.contentMusic:hover section i {
+    color: var(--color-white)
+}
+
+.contentMusic:hover .time span{
+    opacity: 1;
+}
+
+.contentMusic section.time {
+    justify-content: flex-end;
+}
+
+.contentMusic section.time div{
+    margin: 0 16px;
+}
+
+.contentMusic .title div:last-child:hover,
+.contentMusic .album div:hover {
+    text-decoration: underline;
+}
+
+
+
+
 
