@@ -7,6 +7,7 @@ for (item of menuItems) {
     }
 }
 
+//modal create playlist
 const modalOverlay = document.querySelector(".modal-overlay")
 const criar = document.querySelector(".itemLeftBar.sectionMenuPlaylist ul li")
 const close = document.querySelector(".close-modal")
@@ -25,6 +26,7 @@ cancelar.addEventListener("click", function(){
 })
 
 
+//redirect playlist id
 const cards = document.querySelectorAll(".card")
 
 for (let card of cards){
@@ -33,6 +35,19 @@ for (let card of cards){
         location.href=`/playlist/${ID}`
     })
 }
+
+
+const menuPlaylist = document.querySelector('.main .buttons #more')
+const modalMenu = document.querySelector('.modal-overlay-playlist')
+const body = document.querySelector('body')
+
+menuPlaylist.addEventListener("click", function(){
+    modalMenu.classList.add('active')
+})
+
+modalMenu.addEventListener("click", function(){
+    modalMenu.classList.remove('active')
+})
 
 
 

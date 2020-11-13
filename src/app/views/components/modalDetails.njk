@@ -1,0 +1,49 @@
+<div class="modal-overlay">
+    <div class="modal">
+        <div class="headDetails">
+            <h1>Editar Detalhes</h1>
+            <button>
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+
+        <form action="">
+            <div class="bodyDetails">
+                <div class="image">
+                    <input 
+                    id="image-input"
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    >
+                    <div class="icon"></div>
+                </div>
+
+                <div class="titleDescription">
+                    <div class="title">
+                        <div>Título</div>
+                        <input 
+                            type="text"
+                            name="title"
+                            placeholdder="Adicionar título"
+                            value=""
+                        >
+                    </div>
+
+                    <div class="description">
+                        <div>Descrição</div>
+                        <input 
+                            type="text"
+                            name="description"
+                            placeholdder="Adicione descrição (opcional)"
+                            value=""
+                        >
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
+
+        <p>Ao continuar, você autoriza o Spotify a acessar a imagem enviada. Certifique-se de que você tem o direito de fazer o upload dessa imagem.</p>
+    </div>
+</div>
