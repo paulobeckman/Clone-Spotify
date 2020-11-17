@@ -46,9 +46,16 @@ menuPlaylist.addEventListener("click", function(){
 })
 
 modalMenu.addEventListener("click", function(){
-    modalMenu.classList.remove('active')
+    modalMenu.classList.remove('active') 
 })
 
+const modalDetails = document.querySelector('.modalOverlayDetails')
+const details = document.querySelector('#edit')
 
+ details.addEventListener("click", function() {
+    modalDetails.classList.add('active')
+ })
 
-
+//  modalDetails.addEventListener("click", function() {
+//      modalDetails.classList.remove('active')
+//  })

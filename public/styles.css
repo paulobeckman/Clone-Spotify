@@ -776,7 +776,7 @@ form input::placeholder{
 }
 
 
-/*Modal Overlay Menu Playlist*/
+/* Modal Overlay Menu Playlist */
 .modal-overlay-playlist{
     width: 100%;
     height: 1000px;
@@ -820,6 +820,76 @@ form input::placeholder{
     border-radius: 4px;
 }
 
+/* modal overlay details */
+.modalOverlayDetails{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalOverlayDetails.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalDetails {
+    background: var(--color-active-menu);
+    width: 520px;
+    height: 380px;
+}
+
+.modalDetails .headDetails {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+}
+.modalDetails .headDetails h1{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: -0.4px;
+} 
+
+.modalDetails .headDetails span{
+    color: var(--text-secundary-color);
+    font-size: 22px;
+    height: 50%;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.modalDetails .headDetails span:hover{
+    background: var(--secondary-color);
+}
 
 
+.modalDetails form .bodyDetails{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
 
+.modalDetails form .bodyDetails input{
+    background: rgba(255, 255, 255, .1);
+    height: 40px;
+    width: 100%;
+
+    font-size: 14px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.modalDetails form .bodyDetails input::placeholder{
+    font-size: 14px;
+}
