@@ -49,13 +49,29 @@ modalMenu.addEventListener("click", function(){
     modalMenu.classList.remove('active') 
 })
 
-const modalDetails = document.querySelector('.modalOverlayDetails')
+const modalOverlayDetails = document.querySelector('.modalOverlayDetails')
 const details = document.querySelector('#edit')
 
  details.addEventListener("click", function() {
-    modalDetails.classList.add('active')
+    modalOverlayDetails.classList.add('active')
  })
 
-//  modalDetails.addEventListener("click", function() {
-//      modalDetails.classList.remove('active')
+//  modalOverlayDetails.addEventListener("click", function() {
+//      modalOverlayDetails.classList.remove('active')
 //  })
+
+
+//Playlist details 
+
+const inputVisible = document.querySelectorAll(".inputVisible")
+const borderInputVisible = document.querySelectorAll(".visible")
+
+inputVisible.forEach(function (element){
+    element.addEventListener("focus", function() {
+        element.previousElementSibling.classList.add('active')
+    })
+
+    element.addEventListener("blur", function() {
+        element.previousElementSibling.classList.remove('active')
+    })
+})

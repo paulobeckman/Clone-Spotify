@@ -907,12 +907,13 @@ form input::placeholder{
 .modalDetails form .bodyDetails title:focus{
     visibility: visible;
     opacity: 1;
+    transition: 1s ease;
 }
 
 form .titleDescription .title {
     padding-bottom: 16px;
 }
-
+ 
 form .titleDescription .title,
 form .titleDescription .description {
     position: relative;
@@ -929,6 +930,29 @@ form .titleDescription .description div {
     top: -9px;
     left: 10px;
     z-index: 1;
+}
+
+form .titleDescription .title .visible.active,
+form .titleDescription .description .visible.active  {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.2s;
+}
+
+form .titleDescription .visible span::before{
+    content: "";
+    position: relative;
+    display: block;
+    background: var(--color-active-menu);
+    bottom: -9px;
+    width: 115%;
+    height: 1px;
+    right: 3.5px;
+    z-index: -1;
+}
+
+form .titleDescription .title .visible span::before{
+    right: 1.5px;
 }
 
 .modalDetails form {
