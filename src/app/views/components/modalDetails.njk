@@ -2,19 +2,30 @@
     <div class="modalDetails">
         <div class="headDetails">
             <h1>Editar Detalhes</h1>
-            <span class="material-icons">close</span>
+            <span class="material-icons" id="closeModalDetails">close</span>
         </div>
 
         <form action="">
             <div class="bodyDetails">
                 <div class="image">
+                    <div class="iconMore">
+                        <span class="material-icons">more_horiz</span>
+                    </div>
+
                     <input 
-                    id="image-input"
-                    type="file"
-                    name="image"
-                    accept="image/*"
+                        id="image-input"
+                        type="file"
+                        name="image"
+                        accept="image/*"
                     >
-                    <div class="icon"></div>
+
+                    <div class="icon"><i class="fa fa-music"></i></div>
+
+                    <div class="editImage">
+                        <span class="material-icons">edit</span>
+                        <div>Escolher foto</div>
+                    </div>
+
                 </div>
 
                 <div class="titleDescription">
@@ -31,13 +42,16 @@
 
                     <div class="description">
                         <div class="visible"><span>Descrição</span></div>
-                        <input 
+
+                        <textarea 
+                            cols="30" 
+                            rows="10"
                             class="inputVisible"
                             type="text"
                             name="description"
-                            placeholder="Adicione descrição (opcional)"
+                            placeholder="Adicione uma descrição opcional"
                             value=""
-                        >
+                        ></textarea>
                     </div>
                 </div>
             </div>

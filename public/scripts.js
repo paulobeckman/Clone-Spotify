@@ -51,18 +51,18 @@ modalMenu.addEventListener("click", function(){
 
 const modalOverlayDetails = document.querySelector('.modalOverlayDetails')
 const details = document.querySelector('#edit')
+const closeModalDetails = document.querySelector('#closeModalDetails')
 
  details.addEventListener("click", function() {
     modalOverlayDetails.classList.add('active')
  })
 
-//  modalOverlayDetails.addEventListener("click", function() {
-//      modalOverlayDetails.classList.remove('active')
-//  })
+ closeModalDetails.addEventListener("click", function() {
+    modalOverlayDetails.classList.remove('active')
+ })
 
 
 //Playlist details 
-
 const inputVisible = document.querySelectorAll(".inputVisible")
 const borderInputVisible = document.querySelectorAll(".visible")
 

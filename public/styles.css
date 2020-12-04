@@ -21,10 +21,13 @@ a {
     cursor: pointer;
 }
 
-input {
+input,
+textarea {
     text-decoration: none;
     border: none;
     outline: none;
+    font-family: 'Hind', sans-serif;
+    resize: none;
 }
 
 ul li {
@@ -484,7 +487,8 @@ form .input div {
     font-weight: 700;
 }
 
-form input{
+form input,
+form textarea{
     width: 100%;
     height: 58px;
     background: var(--color-active-menu);
@@ -495,7 +499,8 @@ form input{
     color: var(--color-white);
 }
 
-form input::placeholder{
+form input::placeholder,
+form textarea::placeholder{
     font-size: 48px;
     color: #5B5B5B;
     font-weight: 700;
@@ -843,8 +848,8 @@ form input::placeholder{
 .modalDetails {
     position: relative;
     background: var(--color-active-menu);
-    width: 520px;
-    height: 340px;
+    width: 500px;
+    height: 380px;
     border-radius: 8px;
 
     padding: 0 24px 24px 24px;
@@ -853,7 +858,7 @@ form input::placeholder{
 .modalDetails .headDetails {
     display: flex;
     justify-content: space-between;
-    padding: 24px;
+    padding: 20px 0;
 }
 .modalDetails .headDetails h1{
     font-size: 24px;
@@ -877,31 +882,111 @@ form input::placeholder{
 
 .modalDetails form .bodyDetails{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 200px 1fr;
     gap: 16px;
 
     padding-bottom: 16px;
 }
 
-.modalDetails form .bodyDetails input{
+.modalDetails form .bodyDetails input#image-input {
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+}
+
+.modalDetails form .bodyDetails div.image{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+}
+
+form .bodyDetails .image .iconMore {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--text-secundary-color);
+
+    padding: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin: 8px;
+    visibility: hidden;
+}
+
+form .bodyDetails .image:hover .iconMore{
+    visibility: visible;
+    background: var(--secondary-color);   
+}
+
+form .bodyDetails .image .icon {
+    position: absolute;
+    font-size: 100px;
+    color:  #5B5B5B;
+}
+
+form .bodyDetails .image:hover .icon {
+    visibility: hidden;
+}
+
+form .bodyDetails .image .editImage {
+    justify-content: center;
+    visibility: hidden;
+    text-align: center;
+    
+    color: var(--color-white);
+}
+
+form .bodyDetails .image:hover .editImage {
+    visibility: visible;
+}
+
+.bodyDetails .image .editImage span {
+    font-size: 50px;
+}
+
+.bodyDetails .image .editImage div {
+    font-size: 16px;
+}
+
+.modalDetails form .bodyDetails .image,
+.modalDetails form .bodyDetails input,
+.modalDetails form .bodyDetails textarea{
     background: rgba(255, 255, 255, .1);
     height: 40px;
     width: 90%;
+    border-radius: 4px;
 
     font-size: 14px;
     margin-top: 0;
     display: flex;
     align-items: center;
     padding: 0 12px;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
 
-.modalDetails form .bodyDetails input::placeholder{
+.modalDetails form .bodyDetails textarea{
+    height: 100px;
+    width: 93%;
+    padding: 8px 8px 28px;
+
+}
+
+.modalDetails form .bodyDetails input::placeholder,
+.modalDetails form .bodyDetails textarea::placeholder{
     font-size: 14px;
 }
 
-.modalDetails form .bodyDetails input:focus{
+.modalDetails form .bodyDetails input:focus,
+.modalDetails form .bodyDetails textarea:focus{
     border: 0.01rem solid var(--text-secundary-color);
+    background: #383838
 }
 
 .modalDetails form .bodyDetails title:focus{
