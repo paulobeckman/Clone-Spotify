@@ -27,5 +27,27 @@ module.exports = {
         SELECT * 
         FROM playlists
         WHERE id = $1`, [id])
+    },
+    update(data){
+        const query = `
+            UPDATE playlists SET 
+                name = ($1),
+                description = ($2)
+            WHERE id = $3
+        `
+
+        const values = [
+            data.name,
+            data.description,
+            data.id
+        ]
+
+        return db.query(query, values)
+    },
+    files(id){
+        return db.query(`
+            SELECT * 
+            FROM files
+            WHERE playlist_id = $1`, [id]) 
     }
 }

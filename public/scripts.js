@@ -75,3 +75,21 @@ inputVisible.forEach(function (element){
         element.previousElementSibling.classList.remove('active')
     })
 })
+
+// function uploadImage(input) {
+//     if(input.files && input.files[0]){
+//         var reader = new FileReader();
+
+//         reader.onload = function(e){
+//             $('#blah').attr('src', e.target.result);
+
+//             reader.readAsDataURL(input.files[0]);
+//         }
+//     }
+// }
+
+// $("#image-input").change(function() {
+//     readURL(this);
+//   });
+
+function preview() { frame.src=URL.createObjectURL(event.target.files[0]); }

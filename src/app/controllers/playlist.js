@@ -1,4 +1,5 @@
 const Playlists = require('../models/Playlists') 
+const File = require('../models/Files')
 
 module.exports = {
     index(req,res){
@@ -22,5 +23,13 @@ module.exports = {
         const playlist = results.rows[0]
 
         return res.render("pages/playlist", {playlist})
+    },
+    put(req, res){
+        console.log(req.body)
+        Playlists.update(req.body)
+
+        // File.create(req)
+
+        return res.redirect(`playlist/${req.body.id}`)
     }
 }

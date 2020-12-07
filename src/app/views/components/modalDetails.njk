@@ -5,7 +5,8 @@
             <span class="material-icons" id="closeModalDetails">close</span>
         </div>
 
-        <form action="">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <form action="/playlist?_method=PUT" method="POST">
             <div class="bodyDetails">
                 <div class="image">
                     <div class="iconMore">
@@ -17,7 +18,10 @@
                         type="file"
                         name="image"
                         accept="image/*"
+                        onchange="preview()"
                     >
+
+                    <img id="frame"src="#" alt="imagePLaylist" width="100px", height="100px">
 
                     <div class="icon"><i class="fa fa-music"></i></div>
 
@@ -34,9 +38,9 @@
                         <input 
                             class="inputVisible"
                             type="text"
-                            name="title"
+                            name="name"
                             placeholder="Adicionar título"
-                            value=""
+                            value="{{playlist.name}}"
                         >
                     </div>
 
@@ -50,13 +54,19 @@
                             type="text"
                             name="description"
                             placeholder="Adicione uma descrição opcional"
-                            value=""
-                        ></textarea>
+                        >{{playlist.description}}</textarea>
                     </div>
                 </div>
             </div>
 
             <button type="submit">Salvar</button>
+            
+            <input 
+                type="hidden" 
+                name="id"
+                value="{{playlist.id}}"
+            >
+
         </form>
         <p>Ao continuar, você autoriza o Spotify a acessar a imagem enviada. Certifique-se de que você tem o direito de fazer o upload dessa imagem.</p>
     </div>
