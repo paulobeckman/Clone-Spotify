@@ -76,6 +76,67 @@ inputVisible.forEach(function (element){
     })
 })
 
+
+const PhotosUpload = {
+    input: "",
+    preview: document.querySelector('#photos-preview'),
+    uploadLimit: 1,
+    files:[],
+    handleFileInput(event){
+        const { files: fileList } = event.target
+        PhotosUpload.input = event.target
+
+        if(PhotosUpload.hasLimit(event)) return
+
+        Array.from(fileList).forEach(file => {
+            PhotosUpload.files.push(file)
+
+            const reader = new FileReader()
+
+            reader.onload = () => {
+                const image = new Image()
+                image.src = String(reader.result)
+
+                const div = PhotosUpload.getContainer(image)
+
+                PhotosUpload.preview.appendChild(div)
+            }
+
+            reader.readAsDataURL(file)
+        })
+
+        PhotosUpload.input.files = PhotosUpload.getAllFiles()
+    },
+    hasLimit(event){
+        const { uploadLimit, input, preview } = PhotosUpload
+        const { files: fileList } = input
+
+        if (fileList.length > uploadLimit) {
+            alert(`Envie no máximo ${uploadLimit} fotos`)
+            event.preventDefault()
+            return true
+        }
+    },
+    getAllFiles() {
+        const DataTransfer = new Clipboard("").ClipboardData || new DataTransfer()
+
+        PhotosUpload.files.forEach(file => dataTransfer.items.add(file))
+
+        return dataTransfer.files
+    },
+    getContainer(image){
+        const div = document.createElement('div')
+        div.classList.add('photo')
+
+        div.appendChild(image)
+
+        return div
+    }
+}
+
+
+
+
 // function uploadImage(input) {
 //     if(input.files && input.files[0]){
 //         var reader = new FileReader();
@@ -92,4 +153,4 @@ inputVisible.forEach(function (element){
 //     readURL(this);
 //   });
 
-function preview() { frame.src=URL.createObjectURL(event.target.files[0]); }
+// function preview() { frame.src=URL.createObjectURL(event.target.files[0]); }

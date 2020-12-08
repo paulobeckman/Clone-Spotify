@@ -5,31 +5,38 @@
             <span class="material-icons" id="closeModalDetails">close</span>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <form action="/playlist?_method=PUT" method="POST">
+        {# <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> #}
+        <form action="/playlist?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="bodyDetails">
                 <div class="image">
                     <div class="iconMore">
                         <span class="material-icons">more_horiz</span>
                     </div>
 
-                    <input 
-                        id="image-input"
-                        type="file"
-                        name="image"
-                        accept="image/*"
-                        onchange="preview()"
-                    >
+                    <div id="photos-upload">
+                        <input 
+                            id="image-input"
+                            type="file"
+                            name="image"
+                            accept="image/*"
+                            onchange="PhotosUpload.handleFileInput(event)"
+                        >
 
-                    <img id="frame"src="#" alt="imagePLaylist" width="100px", height="100px">
+                        {# <img id="frame"src="#" alt="imagePLaylist" width="100px", height="100px"> #}
 
-                    <div class="icon"><i class="fa fa-music"></i></div>
+                        <div class="icon"><i class="fa fa-music"></i></div>
 
-                    <div class="editImage">
-                        <span class="material-icons">edit</span>
-                        <div>Escolher foto</div>
+                        <div class="editImage">
+                            <span class="material-icons">edit</span>
+                            <div>Escolher foto</div>
+                        </div>
                     </div>
 
+                    <div id="photos-preview">
+                        <div class="photo" id="{{files.id}}">
+                            <img src="{{files.src}}" alt="{{files.name}}">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="titleDescription">

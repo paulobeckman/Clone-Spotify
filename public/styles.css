@@ -888,6 +888,11 @@ form textarea::placeholder{
     padding-bottom: 16px;
 }
 
+form .bodyDetails .image #photos-preview img {
+    width: 100px;
+    height: 100px;
+}
+
 .modalDetails form .bodyDetails input#image-input {
     height: 100%;
     position: absolute;

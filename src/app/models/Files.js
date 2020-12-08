@@ -11,11 +11,17 @@ module.exports = {
             RETURNING id
         `
         const values = [
-            data.name,
+            data.filename,
             data.path,
             data.playlist_id
         ] 
 
         return db.query(query, values)
+    },
+    delete(id){
+        return db.query(`
+            DELETE 
+            FROM files 
+            WHERE id = $1`, [id])
     }
 }

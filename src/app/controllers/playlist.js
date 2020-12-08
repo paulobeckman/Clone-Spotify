@@ -1,5 +1,6 @@
 const Playlists = require('../models/Playlists') 
 const File = require('../models/Files')
+const { files } = require('../models/Playlists')
 
 module.exports = {
     index(req,res){
@@ -8,7 +9,7 @@ module.exports = {
         })
 
     },
-    post(req, res){
+    post(req, res){ 
         const key = Object.keys(req.body)
 
         if(req.body[key] == ""){
@@ -25,10 +26,17 @@ module.exports = {
         return res.render("pages/playlist", {playlist})
     },
     put(req, res){
-        console.log(req.body)
         Playlists.update(req.body)
 
-        // File.create(req)
+        if(req.files.length = 0){
+            req.files.map(file => {
+                console.log(file)
+                File.create({...file, playlist_id: req.body.id})
+            })
+        } else {
+            File.delete(req.id)
+        }
+        
 
         return res.redirect(`playlist/${req.body.id}`)
     }
