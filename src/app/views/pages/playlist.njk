@@ -5,7 +5,15 @@
     <div class="main">
         <div class="contentInfor">
             <section>
-                <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
+
+                {%if not files%}
+                    <img src="http://placehold.it/500x500?text=PRODUTO SEM FOTO" />
+                {%else%}
+                    <img 
+                        src="{{files.src}}" 
+                        alt="{{files.name}}"
+                    >
+                {%endif%}
             </section>
             
             <section>

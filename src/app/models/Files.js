@@ -18,10 +18,16 @@ module.exports = {
 
         return db.query(query, values)
     },
-    delete(id){
+    find(id){
         return db.query(`
-            DELETE 
-            FROM files 
-            WHERE id = $1`, [id])
+            SELECT * 
+            FROM files
+            WHERE playlist_id = $1`, [id])
+    },
+    delete(id){
+        db.query(`
+        DELETE 
+        FROM files 
+        WHERE playlist_id = $1`, [id])
     }
 }

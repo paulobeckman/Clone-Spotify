@@ -1,6 +1,6 @@
 const Playlists = require('../models/Playlists') 
 const File = require('../models/Files')
-const { files } = require('../models/Playlists')
+const fs = require('fs')
 
 module.exports = {
     index(req,res){
@@ -20,23 +20,43 @@ module.exports = {
         return res.redirect('/')
     },
     async show(req, res){
-        let results = await Playlists.find(req.params.id)
-        const playlist = results.rows[0]
+        const resultsPlaylist = await Playlists.find(req.params.id)
+        const playlist = resultsPlaylist.rows[0]
 
-        return res.render("pages/playlist", {playlist})
-    },
-    put(req, res){
-        Playlists.update(req.body)
-
-        if(req.files.length = 0){
-            req.files.map(file => {
-                console.log(file)
-                File.create({...file, playlist_id: req.body.id})
-            })
-        } else {
-            File.delete(req.id)
-        }
+        const resultsFile = await File.find(req.params.id)
         
+        if (resultsFile.rows.length == 0){
+            return res.render("pages/playlist", {playlist})
+        }
+
+        const files = {
+            ...resultsFile,
+            src: `${req.protocol}://${req.headers.host}${resultsFile.rows[0].path.replace("public", "")}` 
+        }
+
+        return res.render("pages/playlist", {playlist, files})
+
+    },
+    async put(req, res){
+        Playlists.update(req.body)
+        
+        const resultsFile  = await File.find(req.body.id)
+        const file = resultsFile.rows[0]
+
+        if(resultsFile.rows.length == 0){
+            req.files.map(file => {
+                File.create({...file, playlist_id: req.body.id})
+            }) 
+
+            return res.redirect(`playlist/${req.body.id}`)
+        }
+
+        fs.unlinkSync(file.path)
+        File.delete(req.body.id)
+
+        await req.files.map(file => {
+            File.create({...file, playlist_id: req.body.id})
+        }) 
 
         return res.redirect(`playlist/${req.body.id}`)
     }
