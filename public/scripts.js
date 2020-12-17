@@ -8,10 +8,10 @@ for (item of menuItems) {
 }
 
 //modal create playlist
-const modalOverlay = document.querySelector(".modal-overlay")
+const modalOverlay = document.querySelector(".modalPageCreatePlaylist")
 const criar = document.querySelector(".itemLeftBar.sectionMenuPlaylist ul li")
 const close = document.querySelector(".close-modal")
-const cancelar = document.querySelector(".modal-overlay .buttons .buttonCancelar")
+const cancelar = document.querySelector(".modalPageCreatePlaylist .buttons .buttonCancelar")
 
 criar.addEventListener("click", function(){
     modalOverlay.classList.add('active')
@@ -74,6 +74,14 @@ inputVisible.forEach(function (element){
     element.addEventListener("blur", function() {
         element.previousElementSibling.classList.remove('active')
     })
+})
+
+// Modal Delete Playlist 
+const modalOverlayDeletePlaylist = document.querySelector(".modalPageDeletePlaylist")
+const buttonDelete = document.querySelector("#delete")
+
+buttonDelete.addEventListener("click", function(){
+    modalOverlayDeletePlaylist.classList.add('active')
 })
 
 

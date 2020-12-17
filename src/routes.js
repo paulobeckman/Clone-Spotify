@@ -6,9 +6,10 @@ const multer = require('./app/middlewares/multer')
 const playlist = require('./app/controllers/playlist')
 
 routes.get('/', playlist.index)
-routes.post('/', playlist.post)
-
 routes.get('/playlist/:id', playlist.show)
-routes.put('/playlist/', multer.array("image", 1), playlist.put)
+
+routes.post('/', playlist.post)
+routes.put('/playlist', multer.array("image", 1), playlist.put)
+routes.delete('/playlist', playlist.delete)
 
 module.exports = routes

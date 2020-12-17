@@ -7,6 +7,7 @@
     --color-active-menu: #282828;
     --color-white: #FFFFFF;
     --color-gray-transparent: rgba(255, 255, 255, .8);
+    --color-modalOverlay: rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -426,28 +427,26 @@ body .bottomBar .inforAlbuns img {
 }
 
 /* modal-overlay*/
-.modal-overlay {
-    background: rgba(0, 0, 0, 0.7);
+.modal {
+    background: var(--color-modalOverlay);
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
     opacity: 0;
     visibility: hidden;
-}
 
-.modal-overlay.active {
-    visibility: visible;
-    opacity: 1;
-}
-
-.modal-overlay{
     display:flex;
     justify-content: center;
     align-items: center;
 }
 
-.modal-overlay .close-modal{
+.modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modalPageCreatePlaylist.modal .close-modal{
     display: flex;
     align-items: center;
     height: 70px;
@@ -455,18 +454,18 @@ body .bottomBar .inforAlbuns img {
     margin: 0 auto;
 }
 
-.modal-overlay .close-modal span {
+.modalPageCreatePlaylist.modal .close-modal span {
     font-size: 53px;
     color: var(--color-white);
     margin: 0 auto;
 }
 
-.modal-overlay .close-modal span:hover {
+.modalPageCreatePlaylist.modal .close-modal span:hover {
     font-size: 56px;
     
 }
 
-.modal-overlay h1 {
+.modalPageCreatePlaylist.modal h1 {
     font-size: 48px;
     color: var(--color-white);
     font-weight: 700;
@@ -475,7 +474,7 @@ body .bottomBar .inforAlbuns img {
      
 }
 
-.modal-overlay form .input {
+.modalPageCreatePlaylist.modal form .input {
     background: var(--color-active-menu);
     padding: 32px;
     width: 95vw;
@@ -507,7 +506,7 @@ form textarea::placeholder{
     align-items: center;
 }
 
-.modal-overlay .buttons{
+.modalPageCreatePlaylist.modal .buttons{
     margin-top: 28px;
     justify-content: center;
     display: grid;
@@ -516,7 +515,7 @@ form textarea::placeholder{
     align-items: center;
 }
 
-.modal-overlay .buttons .cancelar {
+.modalPageCreatePlaylist.modal .buttons .cancelar {
     display: flex;
     justify-content: center;
     height: 42px;
@@ -524,7 +523,7 @@ form textarea::placeholder{
     align-items: center;
 }
 
-.modal-overlay .buttons .buttonCancelar{
+.modalPageCreatePlaylist.modal .buttons .buttonCancelar{
     padding: 8px 34px;
     border-radius: 30px;    
     color: var(--color-white);
@@ -535,20 +534,19 @@ form textarea::placeholder{
     cursor: pointer
 } 
 
-.modal-overlay .buttons .buttonCancelar:hover{
+.modalPageCreatePlaylist.modal .buttons .buttonCancelar:hover{
     transform: scale(1.1)
 }
 
-.modal-overlay .buttons .save {
+.modalPageCreatePlaylist.modal .buttons .save {
     display: flex;
     align-items: center;
     justify-content: center;
 
     height: 42px;
-
 }
 
-.modal-overlay .buttons button {
+.modalPageCreatePlaylist.modal .buttons button {
     background: var(--color-botton-play);
     padding: 12px 47px;
     border-radius: 30px;
@@ -559,7 +557,7 @@ form textarea::placeholder{
     transition: all .5s;
 } 
 
-.modal-overlay .buttons button:hover{
+.modalPageCreatePlaylist.modal .buttons button:hover{
     transform: scale(1.1)
 }
 
@@ -826,26 +824,7 @@ form textarea::placeholder{
 }
 
 /* modal overlay details */
-.modalOverlayDetails{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    background: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    visibility: hidden;
-    opacity: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modalOverlayDetails.active{
-    opacity: 1;
-    visibility: visible;
-}
-
-.modalDetails {
+.modalOverlayDetails.modal .modalBody {
     position: relative;
     background: var(--color-active-menu);
     width: 500px;
@@ -855,19 +834,19 @@ form textarea::placeholder{
     padding: 0 24px 24px 24px;
 }
 
-.modalDetails .headDetails {
+.modalOverlayDetails.modal .modalBody .headDetails {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
 }
-.modalDetails .headDetails h1{
+.modalOverlayDetails.modal .modalBody .headDetails h1{
     font-size: 24px;
     font-weight: 700;
     color: var(--color-white);
     letter-spacing: -0.4px;
 } 
 
-.modalDetails .headDetails span{
+.modalOverlayDetails.modal .modalBody .headDetails span{
     color: var(--text-secundary-color); 
     font-size: 22px;
     height: 50%;
@@ -876,11 +855,11 @@ form textarea::placeholder{
     border-radius: 50%;
 }
 
-.modalDetails .headDetails span:hover{
+.modalOverlayDetails.modal .modalBody .headDetails span:hover{
     background: var(--secondary-color);
 }
 
-.modalDetails form .bodyDetails{
+.modalOverlayDetails.modal .modalBody form .bodyDetails{
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 16px;
@@ -893,14 +872,14 @@ form .bodyDetails .image #photos-preview img {
     height: 100px;
 }
 
-.modalDetails form .bodyDetails input#image-input {
+.modalOverlayDetails.modal .modalBody form .bodyDetails input#image-input {
     height: 100%;
     position: absolute;
     opacity: 0;
     z-index: 1;
 }
 
-.modalDetails form .bodyDetails div.image{
+.modalOverlayDetails.modal .modalBody form .bodyDetails div.image{
     position: relative;
     display: block;
     overflow: hidden;
@@ -960,9 +939,9 @@ form .bodyDetails .image:hover .editImage {
     font-size: 16px;
 }
 
-.modalDetails form .bodyDetails .image,
-.modalDetails form .bodyDetails input,
-.modalDetails form .bodyDetails textarea{
+.modalOverlayDetails.modal .modalBody form .bodyDetails .image,
+.modalOverlayDetails.modal .modalBody form .bodyDetails input,
+.modalOverlayDetails.modal .modalBody form .bodyDetails textarea{
     background: rgba(255, 255, 255, .1);
     height: 40px;
     width: 90%;
@@ -976,25 +955,25 @@ form .bodyDetails .image:hover .editImage {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
 
-.modalDetails form .bodyDetails textarea{
+.modalOverlayDetails.modal .modalBody form .bodyDetails textarea{
     height: 100px;
     width: 93%;
     padding: 8px 8px 28px;
 
 }
 
-.modalDetails form .bodyDetails input::placeholder,
-.modalDetails form .bodyDetails textarea::placeholder{
+.modalOverlayDetails.modal .modalBody form .bodyDetails input::placeholder,
+.modalOverlayDetails.modal .modalBody form .bodyDetails textarea::placeholder{
     font-size: 14px;
 }
 
-.modalDetails form .bodyDetails input:focus,
-.modalDetails form .bodyDetails textarea:focus{
+.modalOverlayDetails.modal .modalBody form .bodyDetails input:focus,
+.modalOverlayDetails.modal .modalBody form .bodyDetails textarea:focus{
     border: 0.01rem solid var(--text-secundary-color);
     background: #383838
 }
 
-.modalDetails form .bodyDetails title:focus{
+.modalOverlayDetails.modal .modalBody form .bodyDetails title:focus{
     visibility: visible;
     opacity: 1;
     transition: 1s ease;
@@ -1045,11 +1024,11 @@ form .titleDescription .title .visible span::before{
     right: 1.5px;
 }
 
-.modalDetails form {
+.modalOverlayDetails.modal .modalBody form {
     position: relative;
 }
 
-.modalDetails form button {
+.modalOverlayDetails.modal .modalBody form button {
     position: absolute;
     right: 0;
     padding:8px 27px;
@@ -1063,7 +1042,7 @@ form .titleDescription .title .visible span::before{
     cursor: pointer;
 }
 
-.modalDetails p {
+.modalOverlayDetails.modal .modalBody p {
     position: absolute;
     bottom: 0;
 
@@ -1072,3 +1051,64 @@ form .titleDescription .title .visible span::before{
     color: var(--color-white);
     padding: 0 24px 24px 0;
 }
+
+
+/*MODAL DELETE PLAYLIST*/
+.modalPageDeletePlaylist .modalBody {
+    height: 110px;
+    width: 288px;
+    background: var(--color-white);
+    padding: 16px;
+    border-radius: 8px;
+    color: #121212;
+}
+
+.modalPageDeletePlaylist .modalBody h1 {
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.modalPageDeletePlaylist .modalBody p {
+    font-size: 14px;
+    font-weight: 400;
+
+    margin-bottom: 24px;
+}
+
+.modalPageDeletePlaylist .modalBody .buttons {
+    display: grid;
+    grid-template-columns: 100px 95px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalPageDeletePlaylist .modalBody .buttonCancelDelete {
+    background: none;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    letter-spacing: 1.76px;
+
+}
+
+.modalPageDeletePlaylist .modalBody .delete button {
+    background: var(--color-botton-play);
+    padding: 8px 30px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.20px;
+    color: var(--color-white);
+    font-stretch: 20px;
+
+}
+
+
+
+
+
+
+

@@ -49,5 +49,12 @@ module.exports = {
             SELECT * 
             FROM files
             WHERE playlist_id = $1`, [id]) 
+    },
+    delete(id){
+        return db.query(`
+            DELETE 
+            FROM playlists 
+            WHERE id = $1`, [id]
+        )
     }
 }

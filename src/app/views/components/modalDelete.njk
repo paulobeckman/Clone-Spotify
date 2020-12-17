@@ -1,0 +1,21 @@
+<div class="modalPageDeletePlaylist modal">
+    <div class="modalBody">
+        <h1 class="title"> Excluir {{playlist.name}}? </h1>
+        <p class="observation" > Não é possível desfazer essa ação. </p>
+
+        <div class="buttons">
+            <section class="cancel">
+                <div class="buttonCancelDelete">CANCELAR</div>
+            </section>
+
+            <section class="delete">
+                <form class="formDelete" method="POST" action="/playlist?_method=DELETE">
+                    <input type="hidden" name="id" value="{{playlist.id}}">
+                    <button type="submit">APAGAR</button>
+                </form>
+            </section>
+            
+        </div>
+        
+    </div>
+</div>

@@ -59,5 +59,19 @@ module.exports = {
         }) 
 
         return res.redirect(`playlist/${req.body.id}`)
+    },
+    async delete(req, res){
+        const PlaylistId = req.body.id
+
+        const resultsFile  = await File.find(PlaylistId)
+        const file = resultsFile.rows[0]
+
+        fs.unlinkSync(file.path)
+        
+
+        await File.delete(PlaylistId)
+        await Playlists.delete(PlaylistId)      
+        
+        return res.redirect("/")
     }
 }
