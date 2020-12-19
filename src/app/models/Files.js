@@ -1,6 +1,14 @@
 const db = require('../../config/db')
 
 module.exports = {
+    all(){
+        try{
+            return db.query(`SELECT * FROM files`)
+
+        }catch(err){
+            console.error(err)
+        }
+    },
     create(data){
         const query = `
             INSERT INTO files(

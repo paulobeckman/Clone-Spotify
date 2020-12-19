@@ -3,11 +3,20 @@ const File = require('../models/Files')
 const fs = require('fs')
 
 module.exports = {
-    index(req,res){
-        Playlists.all(function(playlists){
-            return res.render("pages/home", {playlists})
-        })
+    async index(req,res){
+        const resultsAllPlaylists = await Playlists.all()
+        const playlists = resultsAllPlaylists.rows
 
+        const resultsAllFiles = await File.all()
+
+        const playListsWithFileSrc = playlists.map(playlist => {
+
+            const file = resultsAllFiles.rows.find(file => file.playlist_id === playlist.id);
+
+            return {...playlist, filesrc: `${req.protocol}://${req.headers.host}${file.path.replace("public","")}`};
+        });
+
+        return res.render("pages/home", {playlists: playListsWithFileSrc})
     },
     post(req, res){ 
         const key = Object.keys(req.body)

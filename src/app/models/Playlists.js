@@ -1,12 +1,13 @@
 const db = require ('../../config/db');
 
 module.exports = {
-    all(callback){
-        db.query(`SELECT * FROM playlists`, function(err, results){
-            if(err) throw `Erro dataBase ${err}`
-
-            callback(results.rows)
-        })
+    all(){
+        try{
+            return db.query(`SELECT * FROM playlists`)
+            
+        } catch(err){
+            console.error(err)
+        }
     },
     create(data) {
         const query = `

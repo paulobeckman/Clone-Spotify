@@ -9,11 +9,14 @@
     <div class="cards">
         {% for playlist in playlists %}
             <div class="card" id="{{playlist.id}}">
-                <div class="contentCardImg">
-                    <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
-                    <span class="material-icons">play_arrow</span>
-                </div>
-                
+                    <div class="contentCardImg">
+                        {% if not playlist.filesrc %}
+                            <div class="icon"><i class="fa fa-music"></i></div>
+                        {% else %}
+                            <img src="{{playlist.filesrc}}" alt="Imagem da Playlist">  
+                        {%endif%}
+                        <span class="material-icons">play_arrow</span>
+                    </div>
                 <a class="button" href=""></a>
                 <h1>{{playlist.name}}</h1>
                 <p>Sua mixtape semanal cheia de novas descobertas</p>

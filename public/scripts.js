@@ -79,9 +79,14 @@ inputVisible.forEach(function (element){
 // Modal Delete Playlist 
 const modalOverlayDeletePlaylist = document.querySelector(".modalPageDeletePlaylist")
 const buttonDelete = document.querySelector("#delete")
+const buttonCancelDelete = document.querySelector(".buttonCancelDelete")
 
 buttonDelete.addEventListener("click", function(){
     modalOverlayDeletePlaylist.classList.add('active')
+})
+
+buttonCancelDelete.addEventListener("click", function(){
+    modalOverlayDeletePlaylist.classList.remove('active')
 })
 
 

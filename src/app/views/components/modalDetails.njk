@@ -5,7 +5,6 @@
             <span class="material-icons" id="closeModalDetails">close</span>
         </div>
 
-        {# <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> #}
         <form action="/playlist?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="bodyDetails">
                 <div class="image">
@@ -22,9 +21,9 @@
                             onchange="PhotosUpload.handleFileInput(event)"
                         >
 
-                        {# <img id="frame"src="#" alt="imagePLaylist" width="100px", height="100px"> #}
-
-                        <div class="icon"><i class="fa fa-music"></i></div>
+                        {% if not files.src %}
+                            <div class="icon"><i class="fa fa-music"></i></div>
+                        {% endif%}
 
                         <div class="editImage">
                             <span class="material-icons">edit</span>
