@@ -20,7 +20,11 @@
                 <div class="infor">
                     <div>PLAYLIST</div>
                     <h1>{{playlist.name}}</h1> 
-                    <p>{{playlist.description}}</p>
+                    {%if not playlist.description%}
+                        <p>paulo beckman</p>
+                    {%else%}
+                        <p>{{playlist.description}}</p>
+                    {%endif%}
                     <div class="detailsPlaylist">
                         <span>Spotify</span>
                         <span>•</span>

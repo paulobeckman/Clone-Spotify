@@ -10,27 +10,34 @@ module.exports = {
         const resultsAllFiles = await File.all()
 
         const playListsWithFileSrc = playlists.map(playlist => {
-
             const file = resultsAllFiles.rows.find(file => file.playlist_id === playlist.id);
+            
+            if(file){
+                return {...playlist, filesrc: `${req.protocol}://${req.headers.host}${file.path.replace("public","")}`};
+            }
 
-            return {...playlist, filesrc: `${req.protocol}://${req.headers.host}${file.path.replace("public","")}`};
+            return {...playlist}
         });
 
         return res.render("pages/home", {playlists: playListsWithFileSrc})
     },
-    post(req, res){ 
+    async post(req, res){ 
         const key = Object.keys(req.body)
 
         if(req.body[key] == ""){
             return res.send('Por Favor, preencha todos os campos!')
         }
 
-        Playlists.create(req.body)
+        await Playlists.create(req.body)
         return res.redirect('/')
     },
     async show(req, res){
         const resultsPlaylist = await Playlists.find(req.params.id)
         const playlist = resultsPlaylist.rows[0]
+
+        //pegando todas as playlists para a lista de playlist na barra lateral 
+        const resultsAllPlaylists = await Playlists.all()
+        const playlists = resultsAllPlaylists.rows
 
         const resultsFile = await File.find(req.params.id)
         
@@ -43,19 +50,24 @@ module.exports = {
             src: `${req.protocol}://${req.headers.host}${resultsFile.rows[0].path.replace("public", "")}` 
         }
 
-        return res.render("pages/playlist", {playlist, files})
+        return res.render("pages/playlist", {playlist, files, playlists})
 
     },
     async put(req, res){
-        Playlists.update(req.body)
-        
+
+       await Playlists.update(req.body)
+
+       if(req.files.length == 0){
+            return res.redirect(`playlist/${req.body.id}`)
+       }
+       
         const resultsFile  = await File.find(req.body.id)
         const file = resultsFile.rows[0]
 
         if(resultsFile.rows.length == 0){
-            req.files.map(file => {
-                File.create({...file, playlist_id: req.body.id})
-            }) 
+            await req.files.map(file => {
+                        File.create({...file, playlist_id: req.body.id})
+                    }) 
 
             return res.redirect(`playlist/${req.body.id}`)
         }
@@ -75,10 +87,11 @@ module.exports = {
         const resultsFile  = await File.find(PlaylistId)
         const file = resultsFile.rows[0]
 
-        fs.unlinkSync(file.path)
+        if(file){
+            fs.unlinkSync(file.path)
+            await File.delete(PlaylistId)
+        }
         
-
-        await File.delete(PlaylistId)
         await Playlists.delete(PlaylistId)      
         
         return res.redirect("/")

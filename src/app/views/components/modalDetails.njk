@@ -31,11 +31,17 @@
                         </div>
                     </div>
 
+                    {# {%if files.src%} #}
                     <div id="photos-preview">
                         <div class="photo" id="{{files.id}}">
-                            <img src="{{files.src}}" alt="{{files.name}}">
+                            <div>
+                                <img src="{{files.src}}" alt="{{files.name}}">
+                            </div>
                         </div>
                     </div>
+                    {# {%else%}
+                    {%endif%} #}
+
                 </div>
 
                 <div class="titleDescription">
