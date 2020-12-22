@@ -1,0 +1,17 @@
+{% extends '../components/layout.njk' %}
+
+{%block headerRightBar %}
+    <form class= "filter"action="/search" method="GET">
+        <span class="material-icons">search</span>
+        <input 
+            type="text"
+            name="filter"
+            placeholder="Busque artistas, músicas ou podcasts"
+            value=""
+        >
+    </form>
+{%endblock%}
+
+{%block content%}
+
+{%endblock%}
