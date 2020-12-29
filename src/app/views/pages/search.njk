@@ -13,5 +13,57 @@
 {%endblock%}
 
 {%block content%}
+    <div class="bodySearch">
+        <section>
+            {% if not playlists[0] %}
+                <div>não tem</div>
+            {% else %}
+                <h1 class= "titleCard">Melhor resultado</h1>
+                <div class="backgroundResults">
+                    <img src="" alt="">
 
+                    <h2>{{playlists[0].name}}</h2>
+
+                    <p>De Spotify <span>PLAYLIST</span></p>
+                    <div class="button">
+                        <span class="material-icons buttonCard">play_arrow</span>
+                    </div>
+                </div>
+            {% endif %}
+        </section>
+        <section>
+            <div class="titleCards">
+                <span>Playlist</span>
+                <span>VER TUDO</span>
+            </div>
+
+            <div class="cards">
+                {% for playlist in playlists %}
+                    <div class="card" id="{{playlist.id}}">
+                            <div class="contentCardImg">
+                                {% if not playlist.filesrc %}
+                                    <div class="icon"><i class="fa fa-music"></i></div>
+                                {% else %}
+                                    <img src="{{playlist.filesrc}}" alt="Imagem da Playlist">  
+                                {%endif%}
+                                <span class="material-icons buttonCard">play_arrow</span>
+                            </div>
+                        <a class="button" href=""></a>
+                        <h1>{{playlist.name}}</h1>
+                        {% if not playlist.description %}
+                            <p>de paulo beckman</p>
+                        {% else %}
+                            <p>{{playlist.description}}</p>
+                        {% endif %}
+                    </div>
+                {% endfor%}
+            </div>
+        </section>
+    </div>
+
+
+
+    {% for playlist in playlists%}
+        
+    {% endfor %}
 {%endblock%}

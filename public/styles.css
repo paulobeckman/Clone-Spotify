@@ -8,6 +8,7 @@
     --color-white: #FFFFFF;
     --color-gray-transparent: rgba(255, 255, 255, .8);
     --color-modalOverlay: rgba(0, 0, 0, 0.7);
+    --color-card-playlist: #181818;
 }
 
 * {
@@ -20,6 +21,20 @@ a {
     text-decoration: none;
     color: var(--text-secundary-color);
     cursor: pointer;
+}
+
+.buttonCard {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 3px 8px;
+    padding: 8px;
+    font-size: 30px;
+    background: var(--color-botton-play);
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: 0.2s;
 }
 
 input,
@@ -244,30 +259,25 @@ body .rightBar {
 
 .main .cards {
     display: grid;
-    height: 235px;
-    grid-template-columns: repeat(auto-fill,minmax(158px, 158px));
+    height: 278px;
+    grid-template-columns: repeat(auto-fill,minmax(184px, 184px));
     margin-top: 13px;
-    grid-gap: 16px;
+    grid-gap: 24px;
 
     overflow-y: hidden;
     grid-auto-rows: 0;
     grid-template-rows: 2fr;
 }
 
-/* @media(max-width: 1140px) {
-    .titleCards {
-        width: 687px;
-    }
-} */
 .main .cards .card{
-    background: #181818;
-    border-radius: 3px;
+    background: var(--color-card-playlist);
+    border-radius: 4px;
     color: var(--color-white);
     padding: 12px;
     transition: 0.4s;
     cursor: pointer;
-
-    height: 210px;
+    
+    height: 100%;
    
 }
 
@@ -279,23 +289,12 @@ body .rightBar {
 
 .card .contentCardImg {
     position: relative;
-    height: 133px;
+    height: 158px;
+
 
     margin-bottom: 13px;
 }
 
-.card .contentCardImg span {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 3px 8px;
-    padding: 5px;
-    background: var(--color-botton-play);
-    border-radius: 50%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    transition: 0.2s;
-}
 
 .main .cards .card:hover span {
     opacity: 1;
@@ -304,8 +303,8 @@ body .rightBar {
 }
 
 .cards .card img { 
-    width: 133px;
-    height: 133px;
+    width: 100%;
+    height: 100%;
 
     object-fit: cover;
 
@@ -314,8 +313,8 @@ body .rightBar {
 }
 
 .cards .card .contentCardImg .icon {
-    width: 133px;
-    height: 133px;
+    width: 100%;
+    height: 100%;
     background: var(--color-active-menu);
 
     display: flex;
@@ -331,8 +330,8 @@ body .rightBar {
 }
 
 .cards .card h1{
-    font-weight: bold;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 16px;
     padding-bottom: 3px;
 
     /* limitar tamanho do texto e substituir final por "..."*/
@@ -342,8 +341,8 @@ body .rightBar {
 }
 
 .cards .card p{
+    font-size: 14px;
     font-weight: 400;
-    font-size: 11px;
 
     color: var(--text-secundary-color);
 
@@ -357,14 +356,6 @@ body .rightBar {
     -webkit-box-orient: vertical;
     white-space: normal;
 }
-
-
-/*HOME RESPONSIVIDADE*/
-
-@media screen and (max-width: 1024px) {
-    
- }
-
 
 
 /* BOTTOM BAR */
@@ -879,7 +870,7 @@ form .input div {
     top: 60vh;
     z-index: 1;
 
-    background-color: #181818;
+    background-color: var(--color-card-playlist);
     border-radius: 4px;
     padding: 4px;
 
@@ -1133,7 +1124,7 @@ form .titleDescription .title .visible span::before{
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 1.76px;
-    color: #181818;
+    color: var(--color-card-playlist);
 
     cursor: pointer;
 }
@@ -1262,4 +1253,109 @@ form .titleDescription .title .visible span::before{
 }
 
 
+/* SEARCH */
+.main .bodySearch{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 
+    margin-top: 18px;
+}
+
+.main .bodySearch .titleCards {
+    margin: 0
+}
+
+.main .bodySearch h1.titleCard,
+.main .bodySearch .titleCards span:first-child{
+    font-size: 24px;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.main .bodySearch .titleCards span{
+    cursor: pointer;
+}
+
+.main .bodySearch .titleCards span:last-child{
+    letter-spacing: 1px;
+    align-items: flex-end;
+}
+
+.main .bodySearch .titleCards span:hover{
+    text-decoration: underline;
+}
+
+.main .bodySearch span:nth-child(2){
+    font-size: 12px;
+    color: var(--text-secundary-color);
+    font-weight: 700;
+}
+
+/* search results*/
+.main .bodySearch .backgroundResults {
+    background: var(--color-card-playlist);
+    border-radius: 4px;
+    padding: 20px;
+
+    margin-top: 13px;
+}
+
+.main .bodySearch .backgroundResults img{
+    width: 92px;
+    height: 92px;
+}
+
+.main .bodySearch .backgroundResults h2 {
+    color: var(--color-white);
+    font-size: 32px;
+    font-weight: 700;
+
+    margin-top: 5px;
+}
+
+.main .bodySearch .backgroundResults p{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secundary-color);
+}
+
+.main .bodySearch .backgroundResults p span{
+    font-size: 12px;;
+    color: var(--color-white);
+    background: rgba(0, 0, 0, .2);
+    border-radius: 100px;
+
+    padding: 4px 12px;
+    margin-left: 10px;
+}
+
+.main .bodySearch .backgroundResults .button{
+    position: relative;
+    height: 60px;
+}
+
+.main .bodySearch .backgroundResults span.buttonCard {
+    right: 0;
+    position: absolute;
+    margin-bottom: -10px;
+    margin-right: 0;
+    font-size: 30px;
+    padding: 10px;
+    color: var(--color-white)
+}
+
+.main .bodySearch .contentCardImg span {
+    font-size: 25px;
+    padding: 8px;
+}
+
+.main .bodySearch .backgroundResults:hover{
+    background: var(--secondary-color);
+}
+
+.main .bodySearch .backgroundResults:hover .buttonCard{
+    opacity: 1;
+    margin-bottom: 0;
+    transition: 0.3s;
+}

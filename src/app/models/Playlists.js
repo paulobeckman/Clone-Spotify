@@ -29,6 +29,13 @@ module.exports = {
         FROM playlists
         WHERE id = $1`, [id])
     },
+    finBy(filter){
+        return db.query(`
+            SELECT * 
+            FROM playlists 
+            WHERE playlists.name ILIKE '%${filter}%'
+        `)
+    },
     update(data){
         const query = `
             UPDATE playlists SET 

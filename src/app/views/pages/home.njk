@@ -1,97 +1,93 @@
 {% extends '../components/layout.njk'%}
 
-{%block content %}
-<div class="main">
-    
-    <div class="bodyCards">
-        <div class="titleCards">
-            <span>Atalhos</span>
-            <span>VER TUDO</span>
-        </div>
-        <div class="cards">
-            {% for playlist in playlists %}
-                <div class="card" id="{{playlist.id}}">
-                        <div class="contentCardImg">
-                            {% if not playlist.filesrc %}
-                                <div class="icon"><i class="fa fa-music"></i></div>
-                            {% else %}
-                                <img src="{{playlist.filesrc}}" alt="Imagem da Playlist">  
-                            {%endif%}
-                            <span class="material-icons">play_arrow</span>
-                        </div>
-                    <a class="button" href=""></a>
-                    <h1>{{playlist.name}}</h1>
-                    {% if not playlist.description %}
-                        <p>de paulo beckman</p>
-                    {% else %}
-                        <p>{{playlist.description}}</p>
-                    {% endif %}
-                </div>
-            {% endfor%}
-        </div>
-    </div>
-    
-
-     <div class="titleCards">
+{%block content %}    
+<div class="bodyCards">
+    <div class="titleCards">
         <span>Atalhos</span>
         <span>VER TUDO</span>
     </div>
     <div class="cards">
-        <div class="card">
-            <div class="contentCardImg">
-                <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
-                <span class="material-icons">play_arrow</span>
+        {% for playlist in playlists %}
+            <div class="card" id="{{playlist.id}}">
+                    <div class="contentCardImg">
+                        {% if not playlist.filesrc %}
+                            <div class="icon"><i class="fa fa-music"></i></div>
+                        {% else %}
+                            <img src="{{playlist.filesrc}}" alt="Imagem da Playlist">  
+                        {%endif%}
+                        <span class="material-icons buttonCard ">play_arrow</span>
+                    </div>
+                <a class="button" href=""></a>
+                <h1>{{playlist.name}}</h1>
+                {% if not playlist.description %}
+                    <p>de paulo beckman</p>
+                {% else %}
+                    <p>{{playlist.description}}</p>
+                {% endif %}
             </div>
-            
-            <a class="button" href=""></a>
-            <h1>Descobertas da semana</h1>
-            <p>Sua mixtape semanal cheia de novas descobertas</p>
-        </div>
-
-        <div class="card">
-            <div class="contentCardImg">
-                <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
-                <span class="material-icons">play_arrow</span>
-            </div>
-            
-            <a class="button" href=""></a>
-            <h1>Descobertas da semana</h1>
-            <p>Sua mixtape semanal cheia de novas descobertas</p>
-        </div>
-
-        <div class="card">
-            <div class="contentCardImg">
-                <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
-                <span class="material-icons">play_arrow</span>
-            </div>
-            
-            <a class="button" href=""></a>
-            <h1>Descobertas da semana</h1>
-            <p>Sua mixtape semanal cheia de novas descobertas</p>
-        </div>
-
-        <div class="card">
-            <div class="contentCardImg">
-                <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
-                <span class="material-icons">play_arrow</span>
-            </div>
-            
-            <a class="button" href=""></a>
-            <h1>Descobertas da semana</h1>
-            <p>Sua mixtape semanal cheia de novas descobertas</p>
-        </div>
-
-        <div class="card">
-            <div class="contentCardImg">
-                <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
-                <span class="material-icons">play_arrow</span>
-            </div>
-            
-            <a class="button" href=""></a>
-            <h1>Descobertas da semana</h1>
-            <p>Sua mixtape semanal cheia de novas descobertas</p>
-        </div>
+        {% endfor%}
     </div>
-    
 </div>
+
+
+    <div class="titleCards">
+    <span>Atalhos</span>
+    <span>VER TUDO</span>
+</div>
+<div class="cards">
+    <div class="card">
+        <div class="contentCardImg">
+            <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
+            <span class="material-icons">play_arrow</span>
+        </div>
+        
+        <a class="button" href=""></a>
+        <h1>Descobertas da semana</h1>
+        <p>Sua mixtape semanal cheia de novas descobertas</p>
+    </div>
+
+    <div class="card">
+        <div class="contentCardImg">
+            <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
+            <span class="material-icons">play_arrow</span>
+        </div>
+        
+        <a class="button" href=""></a>
+        <h1>Descobertas da semana</h1>
+        <p>Sua mixtape semanal cheia de novas descobertas</p>
+    </div>
+
+    <div class="card">
+        <div class="contentCardImg">
+            <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
+            <span class="material-icons">play_arrow</span>
+        </div>
+        
+        <a class="button" href=""></a>
+        <h1>Descobertas da semana</h1>
+        <p>Sua mixtape semanal cheia de novas descobertas</p>
+    </div>
+
+    <div class="card">
+        <div class="contentCardImg">
+            <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
+            <span class="material-icons">play_arrow</span>
+        </div>
+        
+        <a class="button" href=""></a>
+        <h1>Descobertas da semana</h1>
+        <p>Sua mixtape semanal cheia de novas descobertas</p>
+    </div>
+
+    <div class="card">
+        <div class="contentCardImg">
+            <img src="https://newjams-images.scdn.co/v2/discover-weekly/QN8GMbB_Vu2tV2JD3M3IkOswgmzU5inqIB3Z_jQ-XmIH16KaQTmOTL5gWUPN-Z8bVUhCVGP58jox_q9ABz-sxQ_80p3TWTuo6jqhBXF2WEQ=/OTA6NTE6OTBUODItMDEtMA==/default" alt="">
+            <span class="material-icons">play_arrow</span>
+        </div>
+        
+        <a class="button" href=""></a>
+        <h1>Descobertas da semana</h1>
+        <p>Sua mixtape semanal cheia de novas descobertas</p>
+    </div>
+</div>    
 {%endblock%}

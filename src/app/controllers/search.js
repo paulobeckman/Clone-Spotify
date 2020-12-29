@@ -1,7 +1,12 @@
-
+const Playlists = require('../models/Playlists')
 
 module.exports = {
-    index(req, res){
-        return res.render("pages/search")
+    async index(req, res){
+        const {filter} = req.query
+
+        const filterResults =  await Playlists.finBy(filter)
+        const playlists = filterResults.rows
+        
+        return res.render("pages/search", {playlists})
     }
 }
