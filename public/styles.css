@@ -27,7 +27,7 @@ a {
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 3px 8px;
+    margin: 3px 8px; 
     padding: 8px;
     font-size: 30px;
     background: var(--color-botton-play);
