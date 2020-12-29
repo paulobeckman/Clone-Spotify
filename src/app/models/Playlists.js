@@ -30,11 +30,18 @@ module.exports = {
         WHERE id = $1`, [id])
     },
     finBy(filter){
-        return db.query(`
-            SELECT * 
-            FROM playlists 
-            WHERE playlists.name ILIKE '%${filter}%'
-        `)
+        try {
+            return db.query(`
+                SELECT p.id, p.name, p.description, f.path
+                FROM playlists p
+                JOIN files f
+                ON p.id = f.playlist_id
+                WHERE p.name ILIKE '%${filter}%'`
+            )
+        } catch(err) {
+            console.error(err)
+        }
+        
     },
     update(data){
         const query = `
