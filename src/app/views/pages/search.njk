@@ -13,11 +13,78 @@
 {%endblock%}
 
 {%block content%}
-    <div class="bodySearch">
-        <section>
-            {% if not playlists[0] %}
-                <div>não tem</div>
-            {% else %}
+    {% if not playlists[0] %}
+        <div class="bodySearchInitial">
+            <h1>Seus gêneros favoritos</h1>
+            <div class="yourGenres">
+                <section>
+                    <div class="gradient">
+                        <h2>Dance / Electronic</h2>
+                    </div>
+                </section>
+                <section>
+                    <div class="gradient">
+                        <h2>Pop</h2>
+                    </div>
+                </section>
+            </div>
+
+            <h1>Navegar por todas as seções</h1>
+            <div class="sections">
+                <section>
+                    <div class="gradient">
+                        <h2>Podcasts</h2>
+                    </div>
+                </section>
+
+                <section >
+                    <div class="gradient">
+                        <h2>Podcasts</h2>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="gradient">
+                        <h2>Podcasts</h2>
+                    </div>
+                </section>
+
+                <section >
+                    <div class="gradient">
+                        <h2>Podcasts</h2>
+                    </div>
+                </section>
+
+                <section >
+                    <div class="gradient">
+                        <h2>Podcasts</h2>
+                    </div>
+                </section>
+                
+                <section>
+                    <div class="gradient">
+                        <h2>Podcasts</h2>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="gradient">
+                        <h2>Podcasts</h2>
+                    </div>
+                </section>
+
+
+                <section>
+                    <div class="gradient">
+                        <h2>Podcasts</h2>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    {% else %}
+        <div class="bodySearch">
+            <section>
                 <h1 class= "titleCard">Melhor resultado</h1>
                 <div class="backgroundResults">
                     <img src="{{playlists[0].filesrc}}" alt="">
@@ -29,38 +96,64 @@
                         <span class="material-icons buttonCard">play_arrow</span>
                     </div>
                 </div>
-            {% endif %}
-        </section>
-        <section>
-            <div class="titleCards">
-                <span>Playlist</span>
-                <span>VER TUDO</span>
-            </div>
+            </section>
+            <section>
+                <div class="titleCards">
+                    <span>Playlist</span>
+                    <span>VER TUDO</span>
+                </div>
 
-            <div class="cards">
-                {% for playlist in playlists %}
-                    <div class="card" id="{{playlist.id}}">
-                            <div class="contentCardImg">
-                                {% if not playlist.filesrc %}
-                                    <div class="icon"><i class="fa fa-music"></i></div>
-                                {% else %}
-                                    <img src="{{playlist.filesrc}}" alt="Imagem da Playlist">  
-                                {%endif%}
-                                <span class="material-icons buttonCard">play_arrow</span>
-                            </div>
-                        <a class="button" href=""></a>
-                        <h1>{{playlist.name}}</h1>
-                        {% if not playlist.description %}
-                            <p>de paulo beckman</p>
-                        {% else %}
-                            <p>{{playlist.description}}</p>
-                        {% endif %}
-                    </div>
-                {% endfor%}
-            </div>
-        </section>
-    </div>
+                <div class="cards">
+                    {% for playlist in playlists %}
+                        <div class="card" id="{{playlist.id}}">
+                                <div class="contentCardImg">
+                                    {% if not playlist.filesrc %}
+                                        <div class="icon"><i class="fa fa-music"></i></div>
+                                    {% else %}
+                                        <img src="{{playlist.filesrc}}" alt="Imagem da Playlist">  
+                                    {%endif%}
+                                    <span class="material-icons buttonCard">play_arrow</span>
+                                </div>
+                            {# <a class="button" href=""></a> #}
+                            <h1>{{playlist.name}}</h1>
+                            {% if not playlist.description %}
+                                <p>de paulo beckman</p>
+                            {% else %}
+                                <p>{{playlist.description}}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor%}
+                </div>
+            </section>
+        </div>
 
+        <div class="titleCards">
+            <span>Playlist</span>
+            <span>VER TUDO</span>
+        </div>
+
+        <div class="cards allPLaylist">
+            {% for playlist in playlists %}
+                <div class="card" id="{{playlist.id}}">
+                        <div class="contentCardImg">
+                            {% if not playlist.filesrc %}
+                                <div class="icon"><i class="fa fa-music"></i></div>
+                            {% else %}
+                                <img src="{{playlist.filesrc}}" alt="Imagem da Playlist">  
+                            {%endif%}
+                            <span class="material-icons buttonCard">play_arrow</span>
+                        </div>
+                    {# <a class="button" href=""></a> #}
+                    <h1>{{playlist.name}}</h1>
+                    {% if not playlist.description %}
+                        <p>de paulo beckman</p>
+                    {% else %}
+                        <p>{{playlist.description}}</p>
+                    {% endif %}
+                </div>
+            {% endfor%}
+        </div>
+    {%endif%}
 
 
     {% for playlist in playlists%}

@@ -15,6 +15,7 @@
     padding: 0;
     margin: 0;
     border: 0;
+    overflow: hidden;
 }
 
 a {
@@ -206,6 +207,32 @@ body .leftBar {
     margin-left: 0;
 }
 
+.itemLeftBar.sectionPlaylists {
+    height: 180px;
+    overflow-y: scroll;
+}
+
+/*style scroll bar*/
+.itemLeftBar.sectionPlaylists::-webkit-scrollbar {
+    width: 10px;
+}
+
+.itemLeftBar.sectionPlaylists::-webkit-scrollbar-thumb{
+    background: #555; 
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+
+.itemLeftBar.sectionPlaylists::-webkit-scrollbar-thumb:hover {
+    background: #888;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+
 .itemLeftBar.sectionPlaylists ul li {
     margin-bottom: 10px;
 }
@@ -217,6 +244,9 @@ body .leftBar {
     margin-bottom: 2px;
     display: flex;
     align-items: center;
+    background: black;
+
+    padding: 8px 0 1px;
 }
 
 .installApp span {
@@ -228,6 +258,9 @@ body .rightBar {
     width: 100%;
     height: 100%;
     background: #0D0D0E;
+    height: 683px;
+    overflow: auto;
+
 }
 
 .main {
@@ -267,6 +300,7 @@ body .rightBar {
     overflow-y: hidden;
     grid-auto-rows: 0;
     grid-template-rows: 2fr;
+    row-gap: 50px;
 }
 
 .main .cards .card{
@@ -1254,6 +1288,71 @@ form .titleDescription .title .visible span::before{
 
 
 /* SEARCH */
+/* search Body Search Initial*/
+.main .bodySearchInitial{
+    margin-top: 18px;
+}
+
+.main .bodySearchInitial h1 {
+    color: var(--color-white);
+}
+
+.main .bodySearchInitial .yourGenres{
+    display: grid;
+    grid-template-columns: repeat(2, 424px);
+    gap: 24px;
+
+    margin-top: 13px;
+}
+
+.bodySearchInitial .yourGenres section{
+    background: rgb(155, 240, 225);
+    height: 220px;
+    border-radius: 8px;
+}
+
+.bodySearchInitial .yourGenres section:last-child{
+    background: rgb(195, 240, 200);
+}
+
+.bodySearchInitial section h2 {
+    font-size: 40px;
+    padding: 16px;
+    letter-spacing: -1px;
+    color: var(--color-white);
+}
+
+.bodySearchInitial .sections section h2 {
+    font-size: 24px;
+}
+
+.bodySearchInitial section .gradient {
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear,left bottom,left top,from(transparent),to(rgba(0,0,0,.4)));
+}
+
+.bodySearchInitial .sections {
+    display: grid;
+    grid-template-columns:  repeat(4, 200px);
+
+    gap: 24px;
+
+    margin-top: 13px;
+}
+
+.bodySearchInitial .sections section {
+    width: 100%;
+    height: 200px;
+
+    background: rgb(80, 155, 245);
+    border-radius: 8px;
+}
+
+.bodySearchInitial .sections section:nth-child(3n + 1) {
+    background: rgb(255, 100, 55);
+}
+
 .main .bodySearch{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1263,7 +1362,7 @@ form .titleDescription .title .visible span::before{
 }
 
 .main .bodySearch .titleCards {
-    margin: 0
+    margin: 0;
 }
 
 .main .bodySearch h1.titleCard,
@@ -1332,7 +1431,7 @@ form .titleDescription .title .visible span::before{
 
 .main .bodySearch .backgroundResults .button{
     position: relative;
-    height: 60px;
+    height: 54px;
 }
 
 .main .bodySearch .backgroundResults span.buttonCard {
@@ -1358,4 +1457,15 @@ form .titleDescription .title .visible span::before{
     opacity: 1;
     margin-bottom: 0;
     transition: 0.3s;
+}
+
+.main .cards.allPLaylist {
+    overflow-y: hidden;
+    grid-auto-rows: auto;
+    row-gap: 24px;
+    height: 100%;
+}
+
+.main .cards.allPLaylist .card{
+    height: 247px;
 }

@@ -34,7 +34,7 @@ module.exports = {
             return db.query(`
                 SELECT p.id, p.name, p.description, f.path
                 FROM playlists p
-                JOIN files f
+                LEFT JOIN files f
                 ON p.id = f.playlist_id
                 WHERE p.name ILIKE '%${filter}%'`
             )

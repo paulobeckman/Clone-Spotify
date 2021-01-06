@@ -11,6 +11,8 @@ module.exports = {
         }
 
         await Playlists.create(req.body)
+
+        console.log(req.body)
         return res.redirect('/')
     },
     async show(req, res){

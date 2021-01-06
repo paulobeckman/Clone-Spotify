@@ -12,7 +12,7 @@ routes.get('/', home.index)
 //Playlist
 routes.get('/playlist/:id', playlist.show)
 
-routes.post('/playlist', playlist.post)
+routes.post('/', playlist.post)
 routes.put('/playlist', multer.array("image", 1), playlist.put)
 routes.delete('/playlist', playlist.delete)
 
