@@ -18,6 +18,7 @@
     overflow: hidden;
 }
 
+
 a {
     text-decoration: none;
     color: var(--text-secundary-color);
@@ -290,17 +291,23 @@ body .rightBar {
     margin-right: 40px;
 }
 
+.main .bodyCards{
+    height: 360px;
+}
+
 .main .cards {
     display: grid;
-    height: 278px;
     grid-template-columns: repeat(auto-fill,minmax(184px, 184px));
     margin-top: 13px;
     grid-gap: 24px;
+    row-gap: 40px;
 
     overflow-y: hidden;
     grid-auto-rows: 0;
-    grid-template-rows: 2fr;
-    row-gap: 50px;
+    grid-template-rows: 1fr;
+
+    position: initial;
+
 }
 
 .main .cards .card{
@@ -310,9 +317,11 @@ body .rightBar {
     padding: 12px;
     transition: 0.4s;
     cursor: pointer;
-    
-    height: 100%;
-   
+}
+
+.main .cards .card .gridCard{
+    display: grid;
+    height: 80px;
 }
 
 .main .cards .card:hover{
@@ -324,7 +333,6 @@ body .rightBar {
 .card .contentCardImg {
     position: relative;
     height: 158px;
-
 
     margin-bottom: 13px;
 }
@@ -965,6 +973,7 @@ form .input div {
     gap: 16px;
 
     padding-bottom: 16px;
+    width: 500px;
 }
 
 form .bodyDetails .image #photos-preview img {
@@ -1074,6 +1083,9 @@ form .bodyDetails .image:hover .editImage {
     align-items: center;
     padding: 0 12px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+
+    color: var(--color-white)
+
 }
 
 .modalOverlayDetails.modal .modalBody form .bodyDetails textarea{
@@ -1102,11 +1114,13 @@ form .bodyDetails .image:hover .editImage {
 
 form .titleDescription .title {
     padding-bottom: 16px;
+    margin-top:4px;
 }
  
 form .titleDescription .title,
 form .titleDescription .description {
     position: relative;
+    overflow: visible;
 }
 
 form .titleDescription .title div,
@@ -1146,7 +1160,13 @@ form .titleDescription .title .visible span::before{
 }
 
 .modalOverlayDetails.modal .modalBody form {
-    position: relative;
+    position: absolute;
+    
+}
+
+.modalOverlayDetails.modal .detailsButton{
+    width: 100%;
+    height: 35px;
 }
 
 .modalOverlayDetails.modal .modalBody form button {
@@ -1359,6 +1379,7 @@ form .titleDescription .title .visible span::before{
     gap: 24px;
 
     margin-top: 18px;
+    max-height: 330px;
 }
 
 .main .bodySearch .titleCards {

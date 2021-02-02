@@ -103,9 +103,9 @@
                     <span>VER TUDO</span>
                 </div>
 
-                <div class="cards">
+                <div class="cards search">
                     {% for playlist in playlists %}
-                        <div class="card" id="{{playlist.id}}">
+                        <div class="card search" id="{{playlist.id}}">
                                 <div class="contentCardImg">
                                     {% if not playlist.filesrc %}
                                         <div class="icon"><i class="fa fa-music"></i></div>
@@ -114,13 +114,14 @@
                                     {%endif%}
                                     <span class="material-icons buttonCard">play_arrow</span>
                                 </div>
-                            {# <a class="button" href=""></a> #}
-                            <h1>{{playlist.name}}</h1>
-                            {% if not playlist.description %}
-                                <p>de paulo beckman</p>
-                            {% else %}
-                                <p>{{playlist.description}}</p>
-                            {% endif %}
+                            <div class="gridCard">                            
+                                <h1>{{playlist.name}}</h1>
+                                {% if not playlist.description %}
+                                    <p>de paulo beckman</p>
+                                {% else %}
+                                    <p>{{playlist.description}}</p>
+                                {% endif %}
+                            </div>
                         </div>
                     {% endfor%}
                 </div>
@@ -143,7 +144,6 @@
                             {%endif%}
                             <span class="material-icons buttonCard">play_arrow</span>
                         </div>
-                    {# <a class="button" href=""></a> #}
                     <h1>{{playlist.name}}</h1>
                     {% if not playlist.description %}
                         <p>de paulo beckman</p>
