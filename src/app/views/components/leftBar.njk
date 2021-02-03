@@ -1,31 +1,35 @@
-<div class="logoSpotify">
-    <img src="https://logodownload.org/wp-content/uploads/2016/09/spotify-logo-branca-white.png" alt="spotify">
+<div class=" itemLeftBar logoSpotify menu">
+    <img class="menu-item" src="https://logodownload.org/wp-content/uploads/2016/09/spotify-logo-branca-white.png" alt="spotify">
 </div>
 
-<div class="itemLeftBar">
+<div class="itemLeftBar menu">
     <ul>
-        <li><a href="/" class=""><span class="material-icons">home</span> Início</a></li>
-        <li><a href="/search" class=""><span class="material-icons">search</span>Buscar</a></li>
-        <li><a href="/collection/playlists" class=""><span class="iconFake">|||\</span>Sua Biblioteca</a></li>
+        <li><a href="/" class="menu-item"><span class="material-icons">home</span> Início</a></li>
+        <li><a href="/search" class="menu-item"><span class="material-icons">search</span>Buscar</a></li>
+        <li><a href="/collection/playlists" class="menu-item"><span class="iconFake">|||\</span>Sua Biblioteca</a></li>
     </ul>
 </div>
 
-<div class="playlist">PLAYLISTS</div>
 
-<div class="itemLeftBar sectionMenuPlaylist">
-    <ul>
+<div class="itemLeftBar sectionMenuPlaylist menu">
+
+    <div class="playlist menu-item">PLAYLISTS</div>
+
+    <ul class="menu-item">
         <li><a><span class="material-icons" id="box">add</span>Criar Playlist</a></li>
         <li><i class="fa fa-heart" id="box"></i>Musicas Curtidas</li>
     </ul>
+
+    <div class="barSectionMenuPlaylist"></div>
 </div>
 
-<div class="itemLeftBar sectionPlaylists">
+<div class="itemLeftBar sectionPlaylists menu">
     <ul>
         {%for playlist in playlists%}
-            <li>{{playlist.name}}</li>
+            <li class="menu-item">{{playlist.name}}</li>
         {%endfor%}
 
     </ul>
 </div>
 
-<div class="installApp"> <span class="material-icons">arrow_circle_down</span>Instalar Aplicativos</div>
+<div class="itemLeftBar installApp menu"> <span class="material-icons menu-item">arrow_circle_down</span>Instalar Aplicativos</div>

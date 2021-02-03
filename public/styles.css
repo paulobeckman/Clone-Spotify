@@ -51,6 +51,7 @@ textarea {
 ul li {
     cursor: pointer;
     list-style:none;
+    overflow: visible;
 }
 
 body {
@@ -117,7 +118,7 @@ body .rightBar .menuName  {
 
 /* LEFT BAR */
 body .leftBar {
-    margin-left: 22px;
+    margin-left: 12px;
 }
 
 .leftBar .logoSpotify img{
@@ -129,7 +130,10 @@ body .leftBar {
 .leftBar .itemLeftBar ul li a{
     display: flex;
     align-items: center;
-    margin-left: -2px;
+}
+
+.menu .menu-item{
+    padding-left: 12px;
 }
 
 .leftBar .itemLeftBar ul li a.active {
@@ -138,7 +142,6 @@ body .leftBar {
     padding: 7px 12px;
     margin-bottom: -3px;
     border-radius: 4px;
-    margin-left: -15px;
     width: 80%;
 }
 
@@ -195,7 +198,6 @@ body .leftBar {
 
 .sectionMenuPlaylist {
     margin-bottom: 17px;
-    border-bottom: 1px solid var(--text-secundary-color);
     margin-right: 12px;
     margin-left: 0;
 }
@@ -208,10 +210,20 @@ body .leftBar {
     margin-left: 0;
 }
 
+.barSectionMenuPlaylist{
+    width: 85%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+    margin-left:12px;
+    
+}
+
 .itemLeftBar.sectionPlaylists {
     height: 180px;
     overflow-y: scroll;
 }
+
+
 
 /*style scroll bar*/
 .itemLeftBar.sectionPlaylists::-webkit-scrollbar {
@@ -661,7 +673,7 @@ form .input div {
     display: grid;
     grid-template-columns: 195px 1fr;
     grid-gap: 27px;
-    height: 40vh
+    height: 30vh
 }
 
 .contentInfor section img{
@@ -681,13 +693,15 @@ form .input div {
     width: 192px;
     height: 192px;
 
-    box-shadow: 0px 0px 100px rgba(0, 0, 0, 1);;
+    /* box-shadow: 0px 0px 100px rgba(0, 0, 0, 1); */
 
     bottom: 0;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow: visible;
 }
 
 .main .contentInfor section{
@@ -909,7 +923,7 @@ form .input div {
 .menuPlaylist {
     position: absolute;
     left: 60vh;
-    top: 60vh;
+    top: 50vh;
     z-index: 1;
 
     background-color: var(--color-card-playlist);
