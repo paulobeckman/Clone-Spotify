@@ -18,6 +18,7 @@
                             type="file"
                             name="image"
                             accept="image/*"
+                            onclick="imgVisible()"
                             onchange="PhotosUpload.handleFileInput(event)"
                         >
 
@@ -25,9 +26,11 @@
                             <div class="icon"><i class="fa fa-music"></i></div>
                         {% endif%}
 
-                        <div class="editImage">
+                            
+                        <div class="editImage" >
                             <span class="material-icons">edit</span>
                             <div>Escolher foto</div>
+
                         </div>
                     </div>
 

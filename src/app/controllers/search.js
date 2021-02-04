@@ -8,6 +8,10 @@ module.exports = {
         const filterResults =  await Playlists.finBy(filter)
         const playlists = filterResults.rows
 
+        //pegando todas as playlists para a lista de playlist na barra lateral 
+        const resultsAllPlaylists = await Playlists.all()
+        const playlistsLeftBar = resultsAllPlaylists.rows
+
         const playlistFiles =  playlists.map(playlist => {
 
             if(playlist.path){
@@ -17,6 +21,6 @@ module.exports = {
             return{...playlist}
         })
 
-        return res.render("pages/search", {playlists: playlistFiles})
+        return res.render("pages/search", {playlists: playlistsLeftBar, playlistsSearch: playlistFiles})
     }
-}
+} 

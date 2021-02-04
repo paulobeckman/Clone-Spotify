@@ -26,7 +26,7 @@ module.exports = {
         const resultsFile = await File.find(req.params.id)
         
         if (resultsFile.rows.length == 0){
-            return res.render("pages/playlist", {playlist})
+            return res.render("pages/playlist", {playlist, playlists})
         }
 
         const files = {

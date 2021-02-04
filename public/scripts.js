@@ -1,5 +1,5 @@
 const currentPage = location.pathname
-const menuItems = document.querySelectorAll(".itemLeftBar ul li a")
+const menuItems = document.querySelectorAll(".itemLeftBar ul li a.selected")
 
 for (item of menuItems) {
     if (currentPage.includes(item.getAttribute("href"))){

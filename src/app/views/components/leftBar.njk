@@ -4,9 +4,9 @@
 
 <div class="itemLeftBar menu">
     <ul>
-        <li><a href="/" class="menu-item"><span class="material-icons">home</span> Início</a></li>
-        <li><a href="/search" class="menu-item"><span class="material-icons">search</span>Buscar</a></li>
-        <li><a href="/collection/playlists" class="menu-item"><span class="iconFake">|||\</span>Sua Biblioteca</a></li>
+        <li><a href="/home" class="menu-item selected"><span class="material-icons">home</span> Início</a></li>
+        <li><a href="/search" class="menu-item selected"><span class="material-icons">search</span>Buscar</a></li>
+        <li><a href="/collection/playlists" class="menu-item selected"><span class="iconFake">|||\</span>Sua Biblioteca</a></li>
     </ul>
 </div>
 
@@ -26,7 +26,7 @@
 <div class="itemLeftBar sectionPlaylists menu">
     <ul>
         {%for playlist in playlists%}
-            <li class="menu-item">{{playlist.name}}</li>
+            <li class="menu-item"><a href="/playlist/{{playlist.id}}">{{playlist.name}}</a></li>
         {%endfor%}
 
     </ul>

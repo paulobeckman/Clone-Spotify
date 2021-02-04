@@ -6,8 +6,12 @@ const playlist = require('./app/controllers/playlist')
 const search = require('./app/controllers/search')
 const home = require('./app/controllers/home')
 
+routes.get('/', function(req,res){
+    return res.redirect("/home")
+})
+
 //Home
-routes.get('/', home.index)
+routes.get('/home', home.index)
 
 //Playlist
 routes.get('/playlist/:id', playlist.show)

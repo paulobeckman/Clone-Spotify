@@ -13,7 +13,7 @@
 {%endblock%}
 
 {%block content%}
-    {% if not playlists[0] %}
+    {% if not playlistsSearch[0] %}
         <div class="bodySearchInitial">
             <h1>Seus gêneros favoritos</h1>
             <div class="yourGenres">
@@ -80,6 +80,19 @@
                     </div>
                 </section>
                 
+                <section>
+                    <div class="gradient">
+                        <h2>Podcasts</h2>
+                    </div>
+                </section>
+
+
+                <section>
+                    <div class="gradient">
+                        <h2>Podcasts</h2>
+                    </div>
+                </section>
+                
             </div>
         </div>
     {% else %}
@@ -87,9 +100,9 @@
             <section>
                 <h1 class= "titleCard">Melhor resultado</h1>
                 <div class="backgroundResults">
-                    <img src="{{playlists[0].filesrc}}" alt="">
+                    <img src="{{playlistsSearch[0].filesrc}}" alt="">
 
-                    <h2>{{playlists[0].name}}</h2>
+                    <h2>{{playlistsSearch[0].name}}</h2>
 
                     <p>De Spotify <span>PLAYLIST</span></p>
                     <div class="button">
@@ -104,7 +117,7 @@
                 </div>
 
                 <div class="cards search">
-                    {% for playlist in playlists %}
+                    {% for playlist in playlistsSearch %}
                         <div class="card search" id="{{playlist.id}}">
                                 <div class="contentCardImg">
                                     {% if not playlist.filesrc %}
@@ -134,7 +147,7 @@
         </div>
 
         <div class="cards allPLaylist">
-            {% for playlist in playlists %}
+            {% for playlist in playlistsSearch %}
                 <div class="card" id="{{playlist.id}}">
                         <div class="contentCardImg">
                             {% if not playlist.filesrc %}
@@ -154,9 +167,4 @@
             {% endfor%}
         </div>
     {%endif%}
-
-
-    {% for playlist in playlists%}
-        
-    {% endfor %}
 {%endblock%}
