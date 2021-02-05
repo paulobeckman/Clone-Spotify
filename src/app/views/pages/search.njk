@@ -98,17 +98,26 @@
     {% else %}
         <div class="bodySearch">
             <section>
-                <h1 class= "titleCard">Melhor resultado</h1>
-                <div class="backgroundResults">
-                    <img src="{{playlistsSearch[0].filesrc}}" alt="">
+                <a href="/playlist/{{playlistsSearch[0].id}}">
+                    <h1 class= "titleCard">Melhor resultado</h1>
+                    <div class="backgroundResults">
 
-                    <h2>{{playlistsSearch[0].name}}</h2>
+                        <div class="contentCardImg">
+                            {% if not playlistsSearch[0].filesrc %}
+                                <div class="icon"><i class="fa fa-music"></i></div>
+                            {% else %}
+                                <img src="{{playlistsSearch[0].filesrc}}" alt="Imagem da Playlist">  
+                            {%endif%}
+                        </div>
 
-                    <p>De Spotify <span>PLAYLIST</span></p>
-                    <div class="button">
-                        <span class="material-icons buttonCard">play_arrow</span>
+                        <h2>{{playlistsSearch[0].name}}</h2>
+
+                        <p>De Spotify <span>PLAYLIST</span></p>
+                        <div class="button">
+                            <span class="material-icons buttonCard">play_arrow</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </section>
             <section>
                 <div class="titleCards">

@@ -89,7 +89,11 @@ body .rightBar header{
     justify-content: space-between;
     align-items: center;
     margin-top: 14px;
+}
 
+body .rightBar .navegationFilter .navegation {
+    display: flex;
+    justify-content: center;
 }
 
 body .rightBar .navegation span:first-child {
@@ -140,7 +144,6 @@ body .leftBar {
     color: var(--color-white);
     background: var(--color-active-menu);
     padding: 7px 12px;
-    margin-bottom: -3px;
     border-radius: 4px;
     width: 80%;
 }
@@ -302,9 +305,16 @@ body .rightBar::-webkit-scrollbar-thumb{
     font-size: 12px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     margin-right: 40px;
 }
+
+.titleCards span:last-child:hover {
+    text-decoration: underline;
+}
+
+
 
 .main .bodyCards{
     height: 360px;
@@ -336,7 +346,7 @@ body .rightBar::-webkit-scrollbar-thumb{
 
 .main .cards .card .gridCard{
     display: grid;
-    height: 80px;
+    height: 75px;
 }
 
 .main .cards .card:hover{
@@ -381,7 +391,7 @@ body .rightBar::-webkit-scrollbar-thumb{
     box-shadow: 0px 0px 20px rgba(0, 0, 0, .4);
 }
 
-.cards .card .contentCardImg .icon i {
+.contentCardImg .icon i {
     font-size: 90px;
     color: #5B5B5B;
 }
@@ -1397,11 +1407,11 @@ form .titleDescription .title .visible span::before{
 
 .main .bodySearch{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 440px 1fr;
     gap: 24px;
 
     margin-top: 18px;
-    max-height: 330px;
+    max-height: 325px;
 }
 
 .main .bodySearch .titleCards {
@@ -1439,6 +1449,7 @@ form .titleDescription .title .visible span::before{
     background: var(--color-card-playlist);
     border-radius: 4px;
     padding: 20px;
+    cursor: pointer;
 
     margin-top: 13px;
 }
@@ -1512,3 +1523,40 @@ form .titleDescription .title .visible span::before{
 .main .cards.allPLaylist .card{
     height: 247px;
 }
+
+/* PAGE PLAYLISTS */
+body .rightBar .playlistsNavegation{
+    height: 40px;
+    margin-left: 40px;
+
+    display: flex;
+    justify-content: center;
+    top: 0;
+}
+
+.rightBar .playlistsNavegation span{
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-right: 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    justify-content: center;
+}
+
+.rightBar .playlistsNavegation .selected {
+    background: #333;
+}
+
+.main .rightBarPlaylists .title h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-white);
+
+    margin: 20px 0;
+}
+
+.allPlaylists .cards
+

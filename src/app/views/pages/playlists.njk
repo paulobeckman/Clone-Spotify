@@ -1,0 +1,42 @@
+{% extends '../components/layout.njk'%}
+
+{% block headerRightBar %}
+    <div class="playlistsNavegation">
+        <span class="selected">Playlists</span>
+        <span>Podcasts</span>
+        <span>Artistas</span>
+        <span>Álbum</span>
+    </div> 
+{% endblock %}
+
+
+{% block content %}
+    <div class="rightBarPlaylists">
+        <div class="title">
+            <h1>Playlists</h1>
+
+        </div>
+
+        <div class="cards allPLaylist">
+            {% for playlist in playlists %}
+                <div class="card" id="{{playlist.id}}">
+                        <div class="contentCardImg">
+                            {% if not playlist.filesrc %}
+                                <div class="icon"><i class="fa fa-music"></i></div>
+                            {% else %}
+                                <img src="{{playlist.filesrc}}" alt="Imagem da Playlist">  
+                            {%endif%}
+                            <span class="material-icons buttonCard">play_arrow</span>
+                        </div>
+                    <h1>{{playlist.name}}</h1>
+                    {% if not playlist.description %}
+                        <p>de paulo beckman</p>
+                    {% else %}
+                        <p>{{playlist.description}}</p>
+                    {% endif %}
+                </div>
+            {% endfor%}
+        </div>
+        
+    </div>
+{% endblock %}
